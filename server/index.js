@@ -26,5 +26,6 @@ app.use(express.json())
 
 app.get('/api/symbols', symbController.getSymbols)
 app.get('/api/meaning/:id', symbController.getMeanings)
+app.post('/api/symbols', symbController.addSymbol)
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} wild chickens laying eggs`))

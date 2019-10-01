@@ -58,3 +58,7 @@ ALTER TABLE "order_symbols" ADD CONSTRAINT "order_symbols_fk1" FOREIGN KEY ("loc
 
 INSERT INTO meanings (symbol_id, meaning_text, language)
 VALUES (1, 'The Great Spirit', 'Ojibwa');
+
+SELECT meaning_text, language FROM meanings
+JOIN symbols ON meanings.symbol_id = symbols.symbol_id
+WHERE symbols.symbol_id = 1;

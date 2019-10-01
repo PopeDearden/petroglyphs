@@ -19,6 +19,9 @@ class Nav extends Component {
     
       return (
         <div className='Nav'>
+            <Link to="/home">
+                <button>Home</button>
+            </Link>
             <Link to='/symbolmenu'>
             <button>Symbol Menu</button>
             </Link>

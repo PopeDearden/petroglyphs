@@ -15,5 +15,15 @@ module.exports = {
         .then(meanings => {
             res.status(200).send(meanings)
         })
+    },
+    addSymbol:(req, res) => {
+        const {name, drawing, attributes} = req.body
+        console.log(name, drawing, attributes)
+        const db=req.app.get('db')
+        db.add_symbol([name, drawing, attributes])
+        .then(symbols => {
+            res.status(200).send(symbols)
+        }
+        )
     }
 }

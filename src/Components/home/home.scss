@@ -1,6 +1,17 @@
-.Home img{
-width: 200px;
-height:200px;
-border: solid;
+
+.Home {
+    display: flex;
+    width:90vw;
+    height:90vh;
+    background-image: url(https://lh3.googleusercontent.com/yIO50NOcS3ZVyEQuWe-3S_0vixPQoBcpAp07O_mS4AKh5Dn9xardJkAsZeulX8_hV8dycEgiQGrXnBJNSgGi-aW5Z7ZSVk5qVU0iSOVsVCmj8BJiKpgBlJtU4kPdUyYYct1KWPSDRrRc-yBQA9pVch48XHfqQFAk8jhlP23QZMT7fZpmAWON_j-H8uTuFKV3d-zA6wmGVdsD0aXmF7xym7ttDiFIZbJbUzfbV_ze40MGOlYEhSObNWGuXbyIaVcPtj0GYE4gSV8uIJk6GSPhOwYCzHJpzB1zpI6IFoAU5aMUs7j1sdjWyrTDgRtpcBWxbiIx_aywcViLqckhlSVQr3FYcs1P0ayWwUoKZSpjEgzdrv9j52OkzucbW99J56XpkfUHpe1hDS2kJcxtSnbZAfO8isgXg4diBI1VGAyd-ECKAhatGRmLU-sOTEtmLMnP62aqqQNWwe2-dSl55nu0bTZJ3z6nQdyDCfMG1MeSE1vyk8C2-6_H-f1V9xf7nUpddGI_S-arX0W7KVhzp7VNgu80cg6hycsvgZYZQ2gr4qWSOpnskQf-o3eeTcL4c5nmKTfVBp60mw9p72GzUVHKZ25DMwmHcacuQHHF2ih6j0qBA9qQ_eVwFfLme3pQPCZL5b9JQ82M_uQUvH0xvjwq7KhJV6G5OlUJ_ShlECsjuORZ-MjYAtb7DQ=w1204-h903-no);
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin:0px;
+    flex-direction: column;
 }
-.Home {}
+.Home-text {
+    padding: 50px;
+}

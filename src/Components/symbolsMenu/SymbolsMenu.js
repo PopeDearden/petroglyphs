@@ -43,26 +43,16 @@ class SymbolsMenu extends Component {
             })
 
     }
-    // componentDidMount(){
-    //     axios.get('/api/symbols')
-    //     .then(res=>{
-    //         this.setState({
-    //             symbols: res.data
-    //         })
-    //     })
-    // }
 
     render() {
         return (
             <div className="symbol-menu">
                 <div className="symbol-map">
-                {this.props.symbols.map(symbol => (
-                    <div key={symbol.symbol_id} className='symbol-display'>
-                        <p>{
-                            symbol.symbol_name}</p>
-                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name)} src={symbol.img_draw} alt="hmm" />
-                    </div>
-                ))}
+                    {this.props.symbols.map(symbol => (
+                        <div key={symbol.symbol_id} className='symbol-display'>
+                            <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name)} src={symbol.img_draw} alt="hmm" />
+                        </div>
+                    ))}
                 </div>
                 <div className="selected-symbol">
                     <img src={this.state.selectedImg} alt='hmm' />
@@ -72,10 +62,11 @@ class SymbolsMenu extends Component {
                         <div key={meanings.meaning_text}>
                             <h4>{meanings.language}</h4>
                             <p> {meanings.meaning_text}</p>
-                            
+
                         </div>
                     ))}
-
+                    
+                    <button onClick={()=>alert('not ready yet')}>Add/Edit Meanings</button>
                 </div>
             </div>
         );
