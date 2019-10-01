@@ -1,5 +1,32 @@
+.symbol-menu {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.symbol-map {
+    margin:15px;
+}
+
+
 .symbol-display img{
     width: 150px;
     height: 150px;
     
+}
+.symbol-display {
+    margin:0;
+}
+.selected-symbol img{
+    width: 200px;
+    height: 200px;
+    border: solid;
+}
+.selected-symbol {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    padding: 30px;
+    margin: 15px;
 }

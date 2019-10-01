@@ -6,5 +6,14 @@ module.exports = {
     .then(symbols => {
         res.status(200).send(symbols)
     })
+    },
+    getMeanings: (req, res) => {
+        const id = req.params.id
+        console.log(req.params)
+        const db = req.app.get('db')
+        db.get_meaning(id)
+        .then(meanings => {
+            res.status(200).send(meanings)
+        })
     }
 }
