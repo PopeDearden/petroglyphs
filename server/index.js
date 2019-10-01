@@ -24,4 +24,6 @@ console.log('db is working'))
 
 app.use(express.json())
 
+app.get('/api/symbols', symbController.getSymbols)
+
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} wild chickens laying eggs`))

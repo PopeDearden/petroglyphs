@@ -3,8 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './Header.scss'
-
-import { updateUser, logout } from './../../ducks/reducer';
+import { updateSymbols} from'./../../ducks/reducer';
+// import { updateUser, logout } from './../../ducks/reducer';
 
 // import homeLogo from './../../assets/home_logo.png';
 // import newLogo from './../../assets/new_logo.png';
@@ -14,6 +14,12 @@ import { updateUser, logout } from './../../ducks/reducer';
 class Header extends Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount(){
+    axios.get('/api/symbols')
+    .then(res => {
+        this.props.updateSymbols(res.data)
+    })
   }
 
   render() {
@@ -28,4 +34,4 @@ class Header extends Component {
 function mapStateToProps(state) {
   return state;
 }
-export default withRouter(connect(mapStateToProps, { updateUser, logout })(Header))
+export default withRouter(connect(mapStateToProps, { updateSymbols })(Header))
