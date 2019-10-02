@@ -42,7 +42,7 @@ class Auth extends Component {
     return (
       <div className='Auth'>
         <div className='auth_container'>
-          <h1 className='auth_title'>Stones of the Past</h1>
+          <h1 className='auth_title'>Techno-Glyph</h1>
           <div className='auth_input_box'>
             <p>Username:</p>
             <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />

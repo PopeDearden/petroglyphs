@@ -13,7 +13,13 @@ class AddLocations extends Component {
       image:''
     };
   }
-
+submit(){
+  axios.post('/api/location/', this.state)
+  .then(res=>{
+    console.log(res)
+    this.props.history.push('/location')
+  })
+}
 
   render() {
     return (
@@ -25,14 +31,14 @@ class AddLocations extends Component {
                     <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
                 </div>
                 <div className='form_input_box'>
+                    <p>Latitude:</p>
+                    <textarea value={this.state.latitude} onChange={e => this.setState({ latitude: e.target.value })} />
                     <p>Longitude:</p>
                     <input value={this.state.longitude} onChange={e => this.setState({ longitude: e.target.value })} />
                 </div>
                 <div className='form_text_box'>
-                    <p>Latitude:</p>
-                    <textarea value={this.state.latitude} onChange={e => this.setState({ latitude: e.target.value })} />
                     <p>Image:</p>
-                    <textarea value={this.state.image} onChange={e => this.setState({ Image: e.target.value })} />
+                    <textarea value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
                 </div>
                 <button onClick={()=>this.submit(this.state)} className='dark_button form_button'>Post</button>
       </div>

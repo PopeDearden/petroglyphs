@@ -10,17 +10,27 @@ class MapGlyphs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchInput: "",
-      symbols: []
+      locations: [],
     };
+    this.getLocations = this.getLocations.bind(this)
   }
-
-
+  componentDidMount(){
+    this.getLocations()
+  }
+getLocations(){
+axios.get('/api/locations')
+.then(res => {
+  this.setState({
+    locations: res.data
+  })
+})
+}
   render() {
     const mapStyles = {
       width: '80%',
       height: '80%',
     };
+    console.log(this.state.locations)
     return (
       <div className="Map-Frame">
         <Map
@@ -29,7 +39,11 @@ class MapGlyphs extends Component {
         style={mapStyles}
         initialCenter={{lat: 38.845, lng:-110.29}}
         >
-        <Marker position={{ lat: 48.00, lng: -122.00}} />
+        {this.state.locations.map(location => (
+        <Marker position={{ lat: location.lat, lng: location.long}} title={location.location_name} />
+        ))}
+                        
+                        
         
         </Map>
       

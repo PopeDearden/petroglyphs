@@ -87,8 +87,13 @@ class EditSymbol extends Component {
         this.refresh()
     }
     deleteSymbol=()=>{
-        axios.delete(`/api/symbol/${this.state.delete}`)
-        this.props.history.push('/symbolmenu')
+        if(this.state.delete === this.props.match.params.id){
+            axios.delete(`/api/symbol/${this.state.delete}`)
+            this.props.history.push('/symbolmenu')
+        }
+        else{
+            alert('BOOOO! Wrong id')
+        }
     }
 
 
