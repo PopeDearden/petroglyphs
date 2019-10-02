@@ -76,15 +76,16 @@ class SymbolsMenu extends Component {
                     <p>{this.state.attributes}</p>
                 
                     <h3>Meanings:</h3>
+                    <div>
                     {this.state.meanings.map(meanings => (
                         <div key={meanings.meaning_text}>
-                            <h4>{meanings.language}</h4>
-                            <p> {meanings.meaning_text}</p>
+                            
+                            <p> {meanings.language}: {meanings.meaning_text}</p>
 
                         </div>
                     ))}
-                    
-                    <button onClick={()=>this.editSymbol(this.state.selectedId)}>Add/Edit Meanings</button>
+                    </div>
+                    <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol/Meanings</button>
                 </div>
             </div>
             </div>

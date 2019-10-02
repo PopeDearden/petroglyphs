@@ -26,7 +26,8 @@
     margin:15px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 80vw;
+    max-width: 85vw;
+    height: auto;
 }
 
 
@@ -46,7 +47,14 @@
 .selected-symbol {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     border: solid;
     padding: 30px;
     margin: 15px;
+    height: 80vh;
+    width: 20vw;
+}
+.meaning-text {
+    display: flex;
+    justify-content: space-evenly;
 }
