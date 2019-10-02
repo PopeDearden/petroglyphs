@@ -1,4 +1,22 @@
 .edit-meaning img{
     height: 150px;
     width: 150px;
+    border: solid;
+}
+.edit-meaning {
+    width: 90vw;
+    // padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.meaning-column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.symbol-column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }

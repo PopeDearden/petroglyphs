@@ -7,6 +7,7 @@ import AddSymbol from './Components/addSymbol/AddSymbol'
 import EditSymbol from './Components/editSymbol/EditSymbol'
 import Auth from './Components/auth/Auth'
 import Charts from './Components/charts/Charts'
+import Locations from './Components/locations/locations'
 
 
 
@@ -18,5 +19,6 @@ export default (
     <Route path='/EditSymbol/:id' component={EditSymbol} />
     <Route path='/AddSymbol' component={AddSymbol} />
     <Route path='/charts' component={Charts}/>
+    <Route path='/locations' component={Locations}/>
   </Switch>
 )

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { Link } from 'react-router-dom'
 import { updateSymbols } from './../../ducks/reducer';
+import './AddSymbol.scss'
 
 class AddSymbol extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ axios.post('/api/symbols/', this.state)
     render() {
 
         return (
-            <div className='Form content_box'>
+            <div className='add-Symbol'>
                 <h2 className='name'>Add new symbol</h2>
                 <img src={this.state.drawing} alt=""/>
                 <div className='form_input_box'>

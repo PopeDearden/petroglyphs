@@ -31,6 +31,9 @@ class Nav extends Component {
             <Link to='/charts'>
                 <button>Charts</button>
             </Link>
+            <Link to='/locations'>
+                <button>Locations</button>
+            </Link>
             {/* <button>Panel Menu</button>
             <button>Add Panel</button> */}
         </div>

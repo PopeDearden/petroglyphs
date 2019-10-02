@@ -15,6 +15,7 @@ class SymbolsMenu extends Component {
             selectedName: "",
             selectedId: 1,
             meanings: [],
+            attributes: "",
 
         }
         this.viewMeaning = this.viewMeaning.bind(this)
@@ -31,11 +32,12 @@ class SymbolsMenu extends Component {
             })
     }
 
-    viewMeaning(image, id, name) {
+    viewMeaning(image, id, name, attributes) {
         this.setState({
             selectedImg: image,
             selectedName: name,
-            selectedId: id
+            selectedId: id,
+            attributes: attributes,
         })
         axios.get(`/api/meaning/${id}`)
             .then(res => {
@@ -51,18 +53,28 @@ class SymbolsMenu extends Component {
     }
 
     render() {
+        let symbolDisplay = this.props.symbols.filter((element, index) =>{
+            return element.attributes.toLowerCase().includes(this.state.searchInput.toLowerCase())
+        })
         return (
+            <div className="symbol-page">
+                <div className ="search-bar">
+                    <p>Search by attribute:</p>
+                    <input onChange={e=> this.setState({searchInput: e.target.value})}/>
+                </div>
             <div className="symbol-menu">
                 <div className="symbol-map">
-                    {this.props.symbols.map(symbol => (
+                    {symbolDisplay.map(symbol => (
                         <div key={symbol.symbol_id} className='symbol-display'>
-                            <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name)} src={symbol.img_draw} alt="hmm" />
+                            <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt="hmm" />
                         </div>
                     ))}
                 </div>
                 <div className="selected-symbol">
                     <img src={this.state.selectedImg} alt='hmm' />
                     <h3>{this.state.selectedName}</h3>
+                    <p>{this.state.attributes}</p>
+                
                     <h3>Meanings:</h3>
                     {this.state.meanings.map(meanings => (
                         <div key={meanings.meaning_text}>
@@ -74,6 +86,7 @@ class SymbolsMenu extends Component {
                     
                     <button onClick={()=>this.editSymbol(this.state.selectedId)}>Add/Edit Meanings</button>
                 </div>
+            </div>
             </div>
         );
     }

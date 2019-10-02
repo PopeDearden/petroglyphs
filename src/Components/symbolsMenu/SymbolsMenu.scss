@@ -1,13 +1,32 @@
+.symbol-page {
+    display: flex;
+    flex-direction: column;
+}
+.search-bar {
+    height:60px;
+    background-color: #a7adba;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    input {
+        height: 20px;
+        width: 400px;
+        margin-left: 8px;
+    }
+}
+
 .symbol-menu {
     width: 90vw;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-
+    
 }
 .symbol-map {
     margin:15px;
     display: flex;
+    flex-wrap: wrap;
+    max-width: 80vw;
 }
 
 

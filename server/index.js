@@ -30,5 +30,7 @@ app.get('/api/meaning/:id', symbController.getMeanings)
 app.post('/api/symbols', symbController.addSymbol)
 app.post('/api/meaning/:id', symbController.addMeaning)
 app.delete('/api/meaning/:id', symbController.deleteMeaning)
+app.delete('/api/symbol/:id', symbController.deleteSymbol)
+app.put('/api/symbol/:id', symbController.updateSymbol)
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} wild chickens laying eggs`))
