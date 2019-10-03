@@ -9,7 +9,7 @@ module.exports = {
                 res.status(200).send(locations)
             })
     },
-    getLocation: (req, res) => {
+    getLocations: (req, res) => {
         const db = req.app.get('db')
         db.get_locations()
             .then(locations => {
@@ -17,11 +17,34 @@ module.exports = {
             }
             )
     },
+    getLocation: (req, res) =>{
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.get_location(id)
+        .then(location => {
+            res.status(200).send(location)
+        })
+    },
     getPanelTable: (req, res) => {
         const db = req.app.get('db')
         const id = req.params.id
         db.get_panel_table(id)
         .then(table =>
             res.status(200).send(table))
+    },
+    addOrder: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        const {locationId, row, pillar} = req.body
+        db.add_order([id, locationId, row, pillar])
+        .then(table =>
+            res.status(200).send('yay!'))
+    },
+    deleteOrder:(req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.delete_order(id)
+        .then(table =>
+            res.status(200).send('deleted'))
     }
 }

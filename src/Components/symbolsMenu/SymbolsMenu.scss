@@ -1,17 +1,28 @@
 .symbol-page {
     display: flex;
     flex-direction: column;
+    color: white;
+    background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg')
 }
 .search-bar {
     height:60px;
-    background-color: #a7adba;
+    background-color: transparent;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 8px;
     input {
-        height: 20px;
-        width: 400px;
+        font-size: 1.5rem;
+        height: 40px;
+        border: none;
+        border-bottom: solid;
+        width: relative;
         margin-left: 8px;
+        background-color: transparent;
+        color: white;
+    }
+    h1 {
+        border-bottom: solid;
     }
 }
 
@@ -23,10 +34,10 @@
     
 }
 .symbol-map {
-    margin:15px;
+    // margin:15px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 85vw;
+    min-width: 70vw;
     height: auto;
 }
 
@@ -34,7 +45,14 @@
 .symbol-display img{
     width: 100px;
     height: 100px;
+    filter: invert(100%);
+    transition: transform.1s;
     
+}
+.symbol-display img:hover {
+    transform:scale(1.5);
+    filter:invert(100%) drop-shadow(16px 16px 20px cyan) ;
+
 }
 .symbol-display {
     margin:0;
@@ -42,17 +60,20 @@
 .selected-symbol img{
     width: 200px;
     height: 200px;
-    border: solid;
+    // border: solid;
+    filter: invert(100%)
 }
 .selected-symbol {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: solid;
+    border-left: solid;
     padding: 30px;
-    margin: 15px;
+    // margin: 15px;
     height: 80vh;
-    width: 20vw;
+    max-width:20vw;
+    min-width:15vw;
+ 
 }
 .meaning-text {
     display: flex;

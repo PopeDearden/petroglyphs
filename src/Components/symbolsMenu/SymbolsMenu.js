@@ -59,21 +59,21 @@ class SymbolsMenu extends Component {
         return (
             <div className="symbol-page">
                 <div className ="search-bar">
-                    <p>Search by attribute:</p>
-                    <input onChange={e=> this.setState({searchInput: e.target.value})}/>
+                    <h1>Symbol Library</h1>
+                    <input placeholder="Search by attribute..." onChange={e=> this.setState({searchInput: e.target.value})}/>
                 </div>
             <div className="symbol-menu">
                 <div className="symbol-map">
                     {symbolDisplay.map(symbol => (
                         <div key={symbol.symbol_id} className='symbol-display'>
-                            <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt="hmm" />
+                            <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name}/>
                         </div>
                     ))}
                 </div>
                 <div className="selected-symbol">
                     <img src={this.state.selectedImg} alt='hmm' />
                     <h3>{this.state.selectedName}</h3>
-                    <p>{this.state.attributes}</p>
+                    <p>Attributes:{this.state.attributes}</p>
                 
                     <h3>Meanings:</h3>
                     <div>

@@ -26,7 +26,8 @@ class Header extends Component {
     
       return (
         <div className='Header'>
-            <h1>Techno-Glyph</h1>
+            <h1>Technoglyph</h1>
+            
         </div>
       )
   }

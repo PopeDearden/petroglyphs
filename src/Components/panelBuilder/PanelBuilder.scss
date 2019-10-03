@@ -1,20 +1,34 @@
 .symbol-list{
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: column;
-    width: 30vw;
+    width: 20vw;
+    border-right: solid;
+    padding-left: 30px;
 }
 .symbol-display-list img{
     width:60px;
     height: 60px;
+    filter: invert(100%);
 }
 .PanelBuilder {
-    display: flex
+    color: white;
+    display: flex;
+    background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg')
 }
 .row-display {
+    width: 30vw;
     display: flex;
     flex-direction: column;
+    padding:40px;
+    background-color: transparent;
 }
 .row {
     display: flex;
+}
+.panel-image img{
+    width:500px;
+
+}
+.input{
+    padding: 30px;
 }

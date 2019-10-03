@@ -23,7 +23,7 @@ class Nav extends Component {
                 <button>Home</button>
             </Link>
             <Link to='/symbolmenu'>
-            <button>Symbol Menu</button>
+            <button>Symbol Library</button>
             </Link>
             <Link to ='/addsymbol' >
             <button>Add Symbol</button>

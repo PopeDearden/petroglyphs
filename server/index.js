@@ -27,15 +27,18 @@ app.use(express.json())
 app.get('/api/symbols', symbController.getSymbols)
 app.get('/api/symbol/:id', symbController.getSymbol)
 app.get('/api/meaning/:id', symbController.getMeanings)
-app.get('/api/locations', locationController.getLocation)
+app.get('/api/locations', locationController.getLocations)
+app.get('/api/singlelocation/:id', locationController.getLocation)
 app.get('/api/paneltable/:id', locationController.getPanelTable)
 
 app.post('/api/symbols', symbController.addSymbol)
 app.post('/api/meaning/:id', symbController.addMeaning)
 app.post('/api/location', locationController.addLocation)
+app.post('/api/order/:id', locationController.addOrder)
 
 app.delete('/api/meaning/:id', symbController.deleteMeaning)
 app.delete('/api/symbol/:id', symbController.deleteSymbol)
+app.delete('/api/order/:id', locationController.deleteOrder)
 
 app.put('/api/symbol/:id', symbController.updateSymbol)
 
