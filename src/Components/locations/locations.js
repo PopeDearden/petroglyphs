@@ -23,6 +23,9 @@ this.setState({
 })
 })
 }
+editPanel=(id)=>{
+  this.props.history.push(`/panelBuilder/${id}`)
+}
 
 
   render() {
@@ -32,6 +35,9 @@ this.setState({
      {this.state.locations.map(location => (
          <div className="Single-Locations">
              <img src={location.location_imgae} alt="hmm" srcset=""/>
+             <div>
+               <button onClick={()=>this.editPanel(location.location_id)}>Edit</button>
+             </div>
              <h1>{location.location_name}</h1>
 
          </div>

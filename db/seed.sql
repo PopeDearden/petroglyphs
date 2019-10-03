@@ -62,3 +62,17 @@ VALUES (1, 'The Great Spirit', 'Ojibwa');
 SELECT meaning_text, language FROM meanings
 JOIN symbols ON meanings.symbol_id = symbols.symbol_id
 WHERE symbols.symbol_id = 1;
+
+SELECT * FROM order_symbols
+INNER JOIN symbols ON order_symbols.symbol_id = symbols.symbol_id
+JOIN locations ON order_symbols.location_id = locations.location_id
+WHERE locations.location_id = 5;
+
+INSERT INTO order_symbols (symbol_id, location_id, row, pillar)
+VALUES (14, 5, 2, 3);
+SELECT * FROM order_symbols;
+
+SELECT * FROM order_symbols
+INNER JOIN symbols ON order_symbols.symbol_id = symbols.symbol_id
+JOIN locations ON order_symbols.location_id = locations.location_id
+WHERE locations.location_id = 5;

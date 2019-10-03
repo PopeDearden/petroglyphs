@@ -1,0 +1,20 @@
+.symbol-list{
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    width: 30vw;
+}
+.symbol-display-list img{
+    width:60px;
+    height: 60px;
+}
+.PanelBuilder {
+    display: flex
+}
+.row-display {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+}

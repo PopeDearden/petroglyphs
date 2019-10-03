@@ -16,5 +16,12 @@ module.exports = {
                 res.status(200).send(locations)
             }
             )
+    },
+    getPanelTable: (req, res) => {
+        const db = req.app.get('db')
+        const id = req.params.id
+        db.get_panel_table(id)
+        .then(table =>
+            res.status(200).send(table))
     }
 }

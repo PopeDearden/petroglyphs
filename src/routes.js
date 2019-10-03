@@ -10,7 +10,7 @@ import Charts from './Components/charts/Charts'
 import Locations from './Components/locations/locations'
 import MapGlyphs from './Components/map/Map'
 import AddLocations from './Components/locations/AddLocations'
-
+import PanelBuilder from './Components/panelBuilder/PanelBuilder'
 
 
 export default (
@@ -24,5 +24,7 @@ export default (
     <Route path='/locations' component={Locations}/>
     <Route path='/map' component={MapGlyphs}/>
     <Route path='/addlocations' component={AddLocations}/>
+    <Route path='/panelBuilder/:id' component={PanelBuilder}/>
+    
   </Switch>
 )
