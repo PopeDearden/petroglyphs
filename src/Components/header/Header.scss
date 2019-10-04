@@ -5,8 +5,17 @@
     background-color: #343d46;
     margin-bottom: 0px;
     display: flex;
-    align-items: center;
+    // align-items: center;
+    justify-content: space-between;
     color: white;
-    padding-left:15px;
+    // padding-left:15px;
    
+}
+.user-info{
+    display: flex;
+    align-items: flex-end;
+    button{
+        height: 30px;
+        margin-left: 30px;
+    }
 }

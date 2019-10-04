@@ -25,6 +25,13 @@ module.exports = {
                 res.status(200).send(meanings)
             })
     },
+    getAllMeanings: (req, res) => {
+        const db = req.app.get('db')
+        db.get_meanings()
+        .then(meanings=>{
+            res.status(200).send(meanings)
+        })
+    },
     addMeaning: (req, res) => {
         const id = req.params.id
         const { meaning, language } = req.body
