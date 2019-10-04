@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import './Header.scss'
 import { updateSymbols} from'./../../ducks/reducer';
+import { thisExpression, thisTypeAnnotation } from '@babel/types';
 // import { updateUser, logout } from './../../ducks/reducer';
 
 // import homeLogo from './../../assets/home_logo.png';
@@ -14,20 +15,31 @@ import { updateSymbols} from'./../../ducks/reducer';
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: []
+    }
   }
   componentDidMount(){
     axios.get('/api/symbols')
     .then(res => {
         this.props.updateSymbols(res.data)
     })
+    axios.get('/auth/me')
+    .then(res => {
+      this.setState({
+        user: res.data
+      })
+      console.log(res.data)
+    })
   }
 
   render() {
-    
       return (
         <div className='Header'>
+          
             <h1>Technoglyph</h1>
             
+            <p>Welcome, {this.state.user.name}!</p>
         </div>
       )
   }

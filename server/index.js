@@ -7,6 +7,7 @@ const symbController = require ('./symbController')
 const session = require ('express-session')
 const locationController = require ('./locationController')
 const app = express()
+const authCtrl = require('./authController')
 
 app.use(
     session({
@@ -41,5 +42,11 @@ app.delete('/api/symbol/:id', symbController.deleteSymbol)
 app.delete('/api/order/:id', locationController.deleteOrder)
 
 app.put('/api/symbol/:id', symbController.updateSymbol)
+
+app.post('/auth/register', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
+app.delete('/auth/logout', authCtrl.logout)
+app.get('/auth/me', authCtrl.getUser)
+app.get('/auth/check', authCtrl.checkUser)
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} wild chickens laying eggs`))

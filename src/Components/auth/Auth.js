@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-
-import { updateUser } from './../../ducks/reducer';
-
-// import logo from './../../assets/helo_logo.png';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { updateUser } from '../../ducks/reducer'
+import { connect } from 'react-redux'
+import swal from 'sweetalert2'
 import './Auth.scss';
 
 class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     }
     this.login = this.login.bind(this);
@@ -23,13 +22,17 @@ class Auth extends Component {
       })
     
   }
-  login() {
-    // axios.post('/auth/login', this.state)
-    //   .then(res => {
-    //     this.props.updateUser(res.data);
-    //     console.log(res.data)
-    //     this.props.history.push('/home');
-    //   })
+  login = async () => {
+    const res = await axios.post('/auth/login', this.state)
+    console.log(res.data)
+    if (res.data.user) {
+      this.props.updateUser(res.data.user)
+      console.log(res.data.user)
+      this.props.check()
+    }
+    
+    swal.fire(res.data.message)
+
   }
 //   register() {
 //     axios.post('/auth/register', this.state)
@@ -39,20 +42,23 @@ class Auth extends Component {
 //       })
 //   }
   render() {
+    // console.log(this.state)
     return (
       <div className='Auth'>
         <div className='auth_container'>
           <h1 className='auth_title'>Techno-Glyph</h1>
           <div className='auth_input_box'>
-            <p>Username:</p>
-            <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />
-          </div>
-          <div className='auth_input_box'>
-            <p>Password:</p>
-            <input value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)} />
-          </div>
-          <div className='auth_button_container'>
-            <button className='dark_button' onClick={this.login}> Login </button>
+          <input
+              onChange={e => this.handleChange('email', e.target.value)}
+              type="text"
+              placeholder="Email"
+            />
+            <input
+              onChange={e => this.handleChange('password', e.target.value)}
+              type="password"
+              placeholder="Password"
+            />
+            <button onClick={this.login}>Login</button>
             {/* <button className='dark_button' onClick={this.register}> Register </button> */}
           </div>
         </div>
@@ -60,5 +66,9 @@ class Auth extends Component {
     );
   }
 }
+function mapStateToProps(reduxState) {
+  const { user } = reduxState
+  return { user }
+}
 
-export default connect(null, { updateUser })(Auth);
+export default connect(mapStateToProps, { updateUser })(Auth);

@@ -1,5 +1,6 @@
 const initialState = {
-    username: '',
+    loggedIn: false,
+    user: null,
     userId: '',
     symbols: [],
   }
@@ -29,10 +30,10 @@ const initialState = {
       }
   }
   
-  export function updateUser(user) {
+  export function updateUser(userObj) {
     return {
       type: UPDATE_USER,
-      payload: user
+      payload: userObj
     }
   }
   

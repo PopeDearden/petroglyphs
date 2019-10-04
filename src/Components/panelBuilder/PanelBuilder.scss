@@ -13,7 +13,9 @@
 .PanelBuilder {
     color: white;
     display: flex;
-    background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg')
+    background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
+    // background-image: url('https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    width:90vw;
 }
 .row-display {
     width: 30vw;
@@ -27,6 +29,8 @@
 }
 .panel-image img{
     width:500px;
+    border: solid;
+    border-radius: 20px;
 
 }
 .input{
