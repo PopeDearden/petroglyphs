@@ -37,11 +37,8 @@ class Header extends Component {
       return (
         <div className='Header'>
           <div className="logo">
-            <h1>Technoglyph</h1>
-          </div>
-          <div className="user-info">
-            <p>Welcome, {this.state.user.name}!</p>
-            <button>logout</button>
+            <h2>Technoglyph</h2>
+            {/* <p>Welcome, {this.state.user.name}!</p> */}
           </div>
         </div>
       )

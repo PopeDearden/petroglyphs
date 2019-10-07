@@ -23,9 +23,13 @@ submit(){
 
   render() {
     return (
-      <div>
-         <h2 className='name'>Add new location</h2>
-                <img src={this.state.drawing} alt=""/>
+      <div className="add-symbol">
+        <div className="search-bar">
+         <h1>Add new location</h1>
+        </div>
+        <div className= "new-symbol">
+
+                <img className="panel-image" src={this.state.drawing} alt=""/>
                 <div className='form_input_box'>
                     <p>Location Name:</p>
                     <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
@@ -41,6 +45,7 @@ submit(){
                     <textarea value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
                 </div>
                 <button onClick={()=>this.submit(this.state)} className='dark_button form_button'>Post</button>
+        </div>
       </div>
     );
   }

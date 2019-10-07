@@ -32,6 +32,12 @@ axios.get('/api/locations')
     };
     console.log(this.state.locations)
     return (
+      <div className="map-main">
+        <div className="search-bar">
+          <h1>
+          Map of all locations
+          </h1>
+        </div>
       <div className="Map-Frame">
         <Map
         google={this.props.google}
@@ -41,12 +47,12 @@ axios.get('/api/locations')
         >
         {this.state.locations.map(location => (
         <Marker position={{ lat: location.lat, lng: location.long}} title={location.location_name} />
-        ))}
-                        
-                        
+        ))}                
         
         </Map>
       
+
+      </div>
 
       </div>
     );

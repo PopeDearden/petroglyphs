@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Locations.scss'
 
 class Locations extends Component {
@@ -11,37 +11,45 @@ class Locations extends Component {
       locations: [],
     };
     this.getLocations = this.getLocations.bind(this)
-}
-componentDidMount(){
-  this.getLocations()
-}
-getLocations(){
-axios.get('/api/locations')
-.then(res => {
-this.setState({
-  locations: res.data
-})
-})
-}
-editPanel=(id)=>{
-  this.props.history.push(`/panelBuilder/${id}`)
-}
+  }
+  componentDidMount() {
+    this.getLocations()
+  }
+  getLocations() {
+    axios.get('/api/locations')
+      .then(res => {
+        this.setState({
+          locations: res.data
+        })
+      })
+  }
+  editPanel = (id) => {
+    this.props.history.push(`/panelBuilder/${id}`)
+  }
+  editSymbol=(id)=> {
+    this.props.history.push(`/editSymbol/${id}`)
+  }
 
 
   render() {
-      console.log(this.state.locations)
+    console.log(this.state.locations)
     return (
       <div className="Locations">
-     {this.state.locations.map(location => (
-         <div className="Single-Locations">
-             <img src={location.location_imgae} alt="hmm" srcset=""/>
-             <div>
-               <button onClick={()=>this.editPanel(location.location_id)}>Edit</button>
-             </div>
-             <h1>{location.location_name}</h1>
+        <div className="search-bar">
+          <h1>Locations</h1>
+        </div>
+        <div className="location-icons">
+        {this.state.locations.map(location => (
+          <div className="Single-Locations">
+            <img onClick={() => this.props.history.push(`/location/${location.location_id}`)} src={location.location_imgae} alt="hmm" srcset="" />
+            <div>
 
-         </div>
-     ))}
+            </div>
+            <h1>{location.location_name}</h1>
+
+          </div>
+        ))}
+        </div>
       </div>
     );
   }

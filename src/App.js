@@ -3,7 +3,7 @@ import Header from './Components/header/Header'
 import Nav from './Components/nav/Nav'
 import routes from './routes';
 import Auth from './Components/auth/Auth'
-import './App.scss';
+import './_base.scss';
 import Axios from 'axios';
 
 
@@ -31,7 +31,7 @@ check(){
   
 }
 render() {
-if(this.state.user === 'no'){
+if(this.state.user === 'no0'){
   return(
     <div className='App'>
       <Auth 
@@ -42,13 +42,14 @@ if(this.state.user === 'no'){
 else{
   return(
     <div className='App'>
+      <div className="Side">
       <Header />
-      <div className="Main">
         <Nav />
-        <div className="display">
-          {routes}
-        </div>
       </div>
+      <div className="Main">
+    {routes}
+      </div>
+     
     </div>
   )
 }

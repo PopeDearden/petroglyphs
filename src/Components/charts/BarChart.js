@@ -58,6 +58,8 @@ export default class BarChart extends React.Component {
 render() {
   return (
     <div class="Chart-Container">
+    <div className="search-bar"> 
+    </div>
       <Bar
         data={this.state}
         options={{

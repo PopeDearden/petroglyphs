@@ -2,29 +2,36 @@
     display: flex;
     flex-direction: column;
     color: white;
-    // background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg')
-    background-image: url('http://towingjanesville.com/wp-content/uploads/2017/04/wicked-witch-grey-rock.jpg');
+    background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
+    // background-image: url('http://towingjanesville.com/wp-content/uploads/2017/04/wicked-witch-grey-rock.jpg');
+    // background-image: url('https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-size: 100%;
+    height: auto;
+    min-height: 92vh;
 }
 .search-bar {
-    height:60px;
-    background-color: transparent;
+    color: white;
+    height:8vh;
+    width: auto;
+    // background-image: linear-gradient(to right, #1c4c74, transparent);
+    background-color: #1c4c74;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 8px;
+    // justify-content: space-between;
+    padding-left: 8px;
+    // border-bottom: solid;
     input {
         font-size: 1.5rem;
         height: 40px;
         border: none;
         border-bottom: solid;
         width: relative;
-        margin-left: 8px;
+        margin-left: 80px;
         background-color: transparent;
         color: white;
     }
     h1 {
-        border-bottom: solid;
+        // border-bottom: solid;
     }
 }
 
@@ -69,12 +76,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border-left: solid;
+    // border-left: solid;
     padding: 30px;
     // margin: 15px;
     height: 80vh;
     max-width:20vw;
     min-width:15vw;
+    // background-image: linear-gradient(to bottom,#1c4c74, transparent)
  
 }
 .meaning-text {

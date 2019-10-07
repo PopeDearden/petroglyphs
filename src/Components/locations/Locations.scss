@@ -1,7 +1,8 @@
 .Locations {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     flex-wrap: wrap;
+    min-width: 90vw;
     img {
         height: 200px;
     }
@@ -9,4 +10,9 @@
 }
 .Single-Locations {
     margin: 20px;
+}
+.location-icons {
+    display: flex;
+    flex-direction: space-between;
+    flex-wrap: wrap;
 }

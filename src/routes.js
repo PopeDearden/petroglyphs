@@ -11,6 +11,7 @@ import Locations from './Components/locations/locations'
 import MapGlyphs from './Components/map/Map'
 import AddLocations from './Components/locations/AddLocations'
 import PanelBuilder from './Components/panelBuilder/PanelBuilder'
+import Location from './Components/locations/Location'
 
 
 export default (
@@ -24,6 +25,7 @@ export default (
     <Route path='/map' component={MapGlyphs}/>
     <Route path='/addlocations' component={AddLocations}/>
     <Route path='/panelBuilder/:id' component={PanelBuilder}/>
+    <Route path='/location/:id' component={Location}/>
     
   </Switch>
 )

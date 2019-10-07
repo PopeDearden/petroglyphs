@@ -11,7 +11,7 @@ class SymbolsMenu extends Component {
         this.state = {
             searchInput: "",
             symbols: [],
-            selectedImg: "https://lh3.googleusercontent.com/V_jLPozY55H4-fbEjVncNouEBU8C1QBK6L6Qd33_6RRfE1RPQSvtjAo-mOs9WMVXpYZWD5IoirSYQGGRgLmV3JSqYPbj2dPMjSM8NRq3w-XlJkSLu9TOx_LScYcOt7EB__l_vELu9DSICTUMwVYCZ7J4TRh-xRlV_1YRk9KF5GPJLIa7a6J9Qp5vNoWPJCebZe5WWVUNKTI0fpac080mlPXTZYQ7brQYb8UtDHERqjn_gaa1X7UGZECFUfE-iu2I-MWMvqR-E3OcbP17pYmGlWQstpr9_zLokA17og9A0mbtpA7QvEtLXRxzdPCWmLI-CNXiq5HDWUAd-Ki3s0VodFnCU1hACebcXzp9TMsQkt6m1O8lfNVuq8g-aJ1Z3Mw0Cv-iBkdjnw4Mkfl2ArcG3aoH9IwrUkd31KIbBaQfgFauCsaYAdmN2QDgUk3y66WMHN3vfmfmho8yLVQCEoOGk0Er06a5FHQMoo3OVt1Mc5R-c9epo2S_PI-VRyFcJ1M_Fc79enI8Cai35SP6FccQxuoKmwq2HsJNOiwSIrBDFIYvwnamtCwu2Pe-8mWOEoLy97y5GLtosDXpN5NDWkrQSyZ06_0g60RDSMrYGrHaiQu1bZB_1-wnLhDYjwpm5gBMuMnhni2L5hh6ab17BbqAHloIpLi-J-nEjZnha55c1hBoRi5UGq8HRV0=s903-no",
+            selectedImg: "https://lh3.googleusercontent.com/HeFvgT6IBWqWJ5ixF_Rq-Lq4YHr0VmxvrqmIRWaOYRVHC80ZjovXTjY_xEIHO1jS6SmXcQNL9JyRUMnrhzZGOxvER8gjU4IkxfgOuvuF5Kqj-YzPi_Rq9wZt1vRq3617BQcvMzyiTuBENj47r71sqqOz963ueQd3xhvAULi0jdaaxvA0EsqtabayA7GJ8slsG4kC6Nmc_ukVLlLaGJK0d_WxWWAMntPRkYsYij7VwOjzBuFF5HmjmwHsCIrmbC0HlItCZSqC2xNoZsPNJU55Ioa8sBFyT52SrcKwMnGVRw-42JGgo7qXpHQYko91UXQvI3iIyyhSfw_w3DE-ntHUR3z-shZvL5nqF4HUoDgezcR-x_Ib9jA__qxaVRfYwWmoxgEWgRigYJlzWmwnH4eaRQqqbn2PSco9hywhaxhycfwEzMRnsQ7TtIYCVaUCFUl48fMfgGgOdm8AjhhZDH6tU9LcMUwaT09KPwalIXPU3v1Lp9zLso2CWBcnRA9c745kFGjCqaydpgATCH_rrBHVAyxXe0Py_cnXs1Sn7--ePk521N2YJW8oXNuhvtsQAajWEVoLZ-WMUJqmDV74QsWa4QpyAyrFIghsKu9SfpJot8uvJmgIWW4Eg1GfQON0F3o8NBu_fYrA3MXmTm9AA37jzO2tRsYBmv72ahYSVbUKKHtZ00X0sSIn_GFjQ161FDQaESN0woQOjCrXPEFAgvYPiiVYI9G2CyqfGTMxtnMcLpjq0DDW=s937-no",
             selectedName: "",
             selectedId: 1,
             meanings: [],
@@ -59,7 +59,7 @@ class SymbolsMenu extends Component {
         return (
             <div className="symbol-page">
                 <div className ="search-bar">
-                    <h1>Symbol Library</h1>
+                    <h1>Symbol Library:</h1>
                     <input placeholder="Search by attribute..." onChange={e=> this.setState({searchInput: e.target.value})}/>
                 </div>
             <div className="symbol-menu">
@@ -85,7 +85,7 @@ class SymbolsMenu extends Component {
                         </div>
                     ))}
                     </div>
-                    <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol/Meanings</button>
+                    <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
                 </div>
             </div>
             </div>
