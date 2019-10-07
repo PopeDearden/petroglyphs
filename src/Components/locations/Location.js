@@ -25,18 +25,30 @@ class Location extends Component {
             selectedName: '',
             selectedId: '',
             attributes: '',
+            notes: [],
         }
 
         this.getSymbols = this.getSymbols.bind(this)
+        this.getNotes = this.getNotes.bind(this)
 
     }
     componentDidMount() {
         this.getSymbols()
         this.getPanelInfo()
         this.getPanelTable(this.props.match.params.id)
+        this.getNotes(this.props.match.params.id)
         this.setState({
-            locationId: +this.props.match.params.id
+            locationId: this.props.match.params.id
         })
+    }
+    getNotes(id) {
+        axios.get(`/api/notes/${id}`)
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    notes: res.data,
+                })
+            })
     }
     getSymbols() {
         axios.get('/api/symbols')
@@ -50,7 +62,6 @@ class Location extends Component {
                 this.setState({
                     table: res.data,
                 })
-                console.log(res.data)
             })
     }
     getPanelInfo() {
@@ -74,16 +85,16 @@ class Location extends Component {
         })
         axios.get(`/api/meaning/${id}`)
             .then(res => {
-                this.setState({
+                this.setState = ({
                     meanings: res.data
                 })
                 console.log(res.data)
             })
 
     }
-    editSymbol=(id)=> {
+    editSymbol = (id) => {
         this.props.history.push(`/editSymbol/${id}`)
-      }
+    }
 
     render() {
         let row1 = this.state.table.filter((element) => {
@@ -99,75 +110,87 @@ class Location extends Component {
             return element.row === 4
         })
         // console.log(row1)
-        console.log(this.state.locationInfo)
+        // console.log(this.state.notes)
         return (
             <div className="Location">
                 <div className="search-bar">
-                <h1>{this.state.locationInfo.location_name}</h1>
+                    <h1>{this.state.locationInfo.location_name}</h1>
                 </div>
                 <div className="location-layout">
-                <div className="box1">
-                <div className="row-display">
-                    <h3>Panel Symbols:</h3>
-                    <div className='row'>
-                        {row1.map(symbol => (
-                            <div className='symbol-display-list'>
-                                <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
+                    <div className="box1">
+                        <div className="row-display">
+                            <h3>Panel Symbols:</h3>
+                            <div className='row'>
+                                {row1.map(symbol => (
+                                    <div className='symbol-display-list'>
+                                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
 
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                    <div className='row'>
-                        {row2.map(symbol => (
-                            <div className='symbol-display-list'>
-                                <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
+                            <div className='row'>
+                                {row2.map(symbol => (
+                                    <div className='symbol-display-list'>
+                                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
 
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                    <div className='row'>
-                        {row3.map(symbol => (
-                            <div className='symbol-display-list'>
-                                <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
+                            <div className='row'>
+                                {row3.map(symbol => (
+                                    <div className='symbol-display-list'>
+                                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
 
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                    <div className='row'>
-                        {row4.map(symbol => (
-                            <div className='symbol-display-list'>
-                                <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
+                            <div className='row'>
+                                {row4.map(symbol => (
+                                    <div className='symbol-display-list'>
+                                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
 
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                    <div className="panel-image">
-                        <img src={this.state.locationInfo.location_imgae} alt="" srcset="" />
-                            <p>Right click on panel image and select, "Open image in new tab" to view full image".</p>
-                    </div>
-                    <button onClick={() => this.editPanel(this.props.match.params.id)}>Edit Panel Symbols</button>
-                </div>
-                </div>
-                <div className="box1">
-                <div className="selected-symbol">
-                    <img src={this.state.selectedImg} alt='hmm' />
-                    <h3>{this.state.selectedName}</h3>
-                    <p>Attributes:{this.state.attributes}</p>
-                
-                    <h3>Meanings:</h3>
-                    <div>
-                    {this.state.meanings.map(meanings => (
-                        <div key={meanings.meaning_text}>
-                            
-                            <p> {meanings.language}: {meanings.meaning_text}</p>
-
+                            <div className="panel-image">
+                                <img src={this.state.locationInfo.location_imgae} alt="" srcset="" />
+                                <p>Right click on panel image and select, "Open image in new tab" to view full image".</p>
+                            </div>
+                            <button onClick={() => this.editPanel(this.props.match.params.id)}>Edit Panel Symbols</button>
                         </div>
-                    ))}
                     </div>
-                    <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
-                </div>
+                    <div className="box1">
+                        <div className="selected-symbol">
+                            <img src={this.state.selectedImg} alt='hmm' />
+                            <h3>{this.state.selectedName}</h3>
+                            <p>Attributes:{this.state.attributes}</p>
 
-                </div>
+                            <h3>Meanings:</h3>
+                            <div>
+                                {this.state.meanings.map(meanings => (
+                                    <div key={meanings.meaning_text}>
+
+                                        <p> {meanings.language}: {meanings.meaning_text}</p>
+
+                                    </div>
+                                ))}
+                            </div>
+                            <button onClick={() => this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
+                        </div>
+
+                    </div>
+                    <div className="box1">
+                        {this.state.notes.map(notes => (
+                            <div key={notes.note_id}>
+                                <h3>
+                                {notes.title}
+                                </h3>
+                                <p>
+                                    {notes.information}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         );

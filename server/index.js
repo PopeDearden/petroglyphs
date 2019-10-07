@@ -6,6 +6,7 @@ const {SERVER_PORT, CONNECTION_STRING, SECRET} = process.env
 const symbController = require ('./symbController')
 const session = require ('express-session')
 const locationController = require ('./locationController')
+const noteController = require('./noteController')
 const app = express()
 const authCtrl = require('./authController')
 
@@ -32,6 +33,7 @@ app.get('/api/meanings', symbController.getAllMeanings)
 app.get('/api/locations', locationController.getLocations)
 app.get('/api/singlelocation/:id', locationController.getLocation)
 app.get('/api/paneltable/:id', locationController.getPanelTable)
+app.get('/api/notes/:id', noteController.getNotes)
 
 app.post('/api/symbols', symbController.addSymbol)
 app.post('/api/meaning/:id', symbController.addMeaning)
