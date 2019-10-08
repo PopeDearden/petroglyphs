@@ -39,12 +39,15 @@ app.post('/api/symbols', symbController.addSymbol)
 app.post('/api/meaning/:id', symbController.addMeaning)
 app.post('/api/location', locationController.addLocation)
 app.post('/api/order/:id', locationController.addOrder)
+app.post('/api/notes/:id', noteController.addNote)
 
 app.delete('/api/meaning/:id', symbController.deleteMeaning)
 app.delete('/api/symbol/:id', symbController.deleteSymbol)
 app.delete('/api/order/:id', locationController.deleteOrder)
+app.delete('/api/notes/:id', noteController.deleteNote)
 
 app.put('/api/symbol/:id', symbController.updateSymbol)
+app.put('/api/notes/:id', noteController.editNote)
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)

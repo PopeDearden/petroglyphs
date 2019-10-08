@@ -14,7 +14,7 @@ class EditSymbol extends Component {
             language: "",
             name: "",
             image: "",
-            attributes:"",
+            attributes: "",
             delete: 0,
 
         };
@@ -79,19 +79,19 @@ class EditSymbol extends Component {
             })
 
     }
-    async updateSymbol(){
+    async updateSymbol() {
         await axios.put(`/api/symbol/${this.props.match.params.id}`, this.state)
-        .then(res => {
-            console.log(res)
-        })
+            .then(res => {
+                console.log(res)
+            })
         this.refresh()
     }
-    deleteSymbol=()=>{
-        if(this.state.delete === this.props.match.params.id){
+    deleteSymbol = () => {
+        if (this.state.delete === this.props.match.params.id) {
             axios.delete(`/api/symbol/${this.state.delete}`)
             this.props.history.push('/symbolmenu')
         }
-        else{
+        else {
             alert('BOOOO! Wrong id')
         }
     }
@@ -99,16 +99,38 @@ class EditSymbol extends Component {
 
     render() {
         return (
-            <div className="edit-meaning">
-                <div className="meaning-column">
+            <div className="edit-main">
+                <div className="search-bar">
+                    <h1>Edit Symbol Info</h1>
+                </div>
+                <div className="symbol-info">
                     <img src={this.state.image} alt="" />
-                    {this.state.meanings.map(meanings => (
-                        <div key={meanings.meaning_text}>
-                            <h4>{meanings.language}</h4>
-                            <p> {meanings.meaning_text}</p>
-                            <button onClick={() => this.deleteMeaning(meanings.meaning_id)}>Delete</button>
-                        </div>
-                    ))}
+                    <div className="info-align">
+                        <p>Symbol Name:</p>
+                        <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
+                        <p>Symbol Drawing:</p>
+                        <input value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
+                        <button onClick={() => this.updateSymbol()}>Update Symbol</button>
+                        <p>Enter symbol id to delete:</p><input onChange={e => this.setState({ delete: e.target.value })} />
+                        <button onClick={() => this.deleteSymbol()}>Delete Symbol</button>
+                    </div>
+                    <div className="align-info">
+                        <p>Attributes:</p>
+                        <textarea className="Paragraph" value={this.state.attributes} onChange={e => this.setState({ attributes: e.target.value })} />
+
+                    </div>
+
+                </div>
+                <div className="symbol-info">
+                    <div className="meaning-column">
+                        {this.state.meanings.map(meanings => (
+                            <div key={meanings.meaning_text}>
+                                <h4>{meanings.language}</h4>
+                                <p> {meanings.meaning_text}</p>
+                                <button onClick={() => this.deleteMeaning(meanings.meaning_id)}>Delete</button>
+                            </div>
+                        ))}
+                    </div>
                     <div>
                         <h3>Add another meaning</h3>
                         <div className='form_input_box'>
@@ -117,24 +139,15 @@ class EditSymbol extends Component {
                         </div>
                         <div className='form_input_box'>
                             <p>Meaning:</p>
-                            <input value={this.state.meaning} onChange={e => this.setState({ meaning: e.target.value })} />
+                            <textarea className="Paragraph" value={this.state.meaning} onChange={e => this.setState({ meaning: e.target.value })} />
                         </div>
                         <button onClick={() => this.addMeaning(this.props.match.params.id)}>submit</button>
                     </div>
-                </div>
-                <div className="symbol-column">
-                        <h1>Edit Symbol</h1>
-                        <h3>Symbol Name:</h3>
-                        <input value={this.state.name} onChange={e=>this.setState({name: e.target.value})}/>
-                        <h3>Symbol Drawing:</h3>
-                        <input value={this.state.image} onChange={e=>this.setState({image: e.target.value})}/>
-                    
-                        <h3>Attributes</h3>
-                        <input value={this.state.attributes} onChange={e=>this.setState({attributes: e.target.value})}/>
-                      <button onClick={()=>this.updateSymbol()}>Update Symbol</button>  
-                      <p>Enter symbol id to delete:</p><input onChange={e=>this.setState({delete: e.target.value})}/>
-                      
-                      <button onClick={()=>this.deleteSymbol()}>Delete Symbol</button>
+                    <div className="symbol-column">
+
+
+
+                    </div>
                 </div>
             </div>
 

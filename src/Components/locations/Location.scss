@@ -1,20 +1,107 @@
 .Location {
     display: flex;
-    width: 90vw;
+    min-width:90vw;
+    max-width: 90vw;
     flex-direction: column;
-    background-color: #354551;
+    // background-color: #354551;
+    background-image: linear-gradient(to bottom, #648cac, #354551);
     color: white;
     img {
     margin-top: 30px;
     }
 }
 .location-layout {
+    max-width: 90vw;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .box1 {
+    // background-color: red;
     // padding: 30px;
-    width: auto;
-    border-right: solid;
-    background-image: linear-gradient(to bottom, #648cac, transparent)
+    min-width: 10vw;
+    max-width: 70vw;
+    // border-right: solid;
+    // background-image: linear-gradient(to bottom, #648cac, transparent)
+}
+.notes {
+    overflow: auto;
+    margin: 20px;
+    h1{
+        border-bottom: dotted;
+    }
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    height: 30vh;
+    // max-width: 5vw;
+}
+.note-form {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    // border: solid;
+    // padding: 5px;
+    margin-right: 30px;
+    margin-left: 30px;
+    textarea {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 20px;
+    }
+    input {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        border-bottom: solid;
+    }
+}
+.Paragraph {
+    height: 20vh;
+    // align-content: flex-start;
+}
+.two-buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+.new-note {
+    width: 8vw;
+    border: solid;
+    width: relative;
+    margin: 5px;
+}
+.box2{
+    display: flex;
+    flex-direction: column;
+    height: relative;
+}
+.note-titles {
+    // background-color: red;
+    margin-right: 10px;
+    // border-right: solid;
+    cursor: pointer;
+    transition: transform.1s;
+}
+.note-titles:hover {
+    color: red;
+}
+.selected-symbol-location {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // border-left: solid;
+    padding: 30px;
+    // margin: 15px;
+    height: 80vh;
+    max-width:10vw;
+    min-width:10vw;
+    img{
+        width: 100px;
+        height: 100px;
+        // border: solid;
+        filter: invert(100%)
+    }
 }

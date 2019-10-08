@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 import { updateSymbols } from '../../ducks/reducer';
 import './Location.scss'
-
+import swal from 'sweetalert2'
 
 
 class Location extends Component {
@@ -26,10 +26,16 @@ class Location extends Component {
             selectedId: '',
             attributes: '',
             notes: [],
+            title: '',
+            note: '',
+            noteId: '',
         }
 
         this.getSymbols = this.getSymbols.bind(this)
         this.getNotes = this.getNotes.bind(this)
+        this.newNote = this.newNote.bind(this)
+        this.editNote = this.editNote.bind(this)
+        this.deleteNote = this.deleteNote.bind(this)
 
     }
     componentDidMount() {
@@ -85,7 +91,7 @@ class Location extends Component {
         })
         axios.get(`/api/meaning/${id}`)
             .then(res => {
-                this.setState = ({
+                this.setState({
                     meanings: res.data
                 })
                 console.log(res.data)
@@ -94,6 +100,35 @@ class Location extends Component {
     }
     editSymbol = (id) => {
         this.props.history.push(`/editSymbol/${id}`)
+    }
+    async newNote(id) {
+        await axios.post(`/api/notes/${id}`)
+            .then(
+                this.setState({
+                    form: 'add',
+                    title: '',
+                    note: '',
+
+                })
+            )
+        await
+            this.getNotes(id)
+    }
+    async editNote() {
+        await axios.put(`/api/notes/${this.state.noteId}`, this.state)
+                await this.getNotes(this.props.match.params.id)
+                await swal.fire('Note Updated')
+    }
+    async deleteNote() {
+        await axios.delete(`/api/notes/${this.state.noteId}`)
+            .then(
+                await this.setState({
+                    title: '',
+                    note: '',
+                })
+                )
+                await this.getNotes(this.props.match.params.id)
+                await swal.fire('Note Deleted')
     }
 
     render() {
@@ -160,10 +195,10 @@ class Location extends Component {
                         </div>
                     </div>
                     <div className="box1">
-                        <div className="selected-symbol">
+                        <div className="selected-symbol-location">
                             <img src={this.state.selectedImg} alt='hmm' />
                             <h3>{this.state.selectedName}</h3>
-                            <p>Attributes:{this.state.attributes}</p>
+                            <p>Attributes: {this.state.attributes}</p>
 
                             <h3>Meanings:</h3>
                             <div>
@@ -179,17 +214,29 @@ class Location extends Component {
                         </div>
 
                     </div>
-                    <div className="box1">
-                        {this.state.notes.map(notes => (
-                            <div key={notes.note_id}>
-                                <h3>
-                                {notes.title}
-                                </h3>
-                                <p>
-                                    {notes.information}
-                                </p>
+                    <div className="box2">
+                        <div className="note-form">
+                            <h1>Notes</h1>
+                
+                            <input onChange={e => this.setState({ title: e.target.value })} value={this.state.title} />
+                          
+                            <textarea onChange={e => this.setState({ note: e.target.value })} value={this.state.note} className="Paragraph" />
+                            <div className="two-buttons">
+                                <button onClick={() => this.editNote()}>Update</button>
+                                <button onClick={() => this.deleteNote()}>Delete</button>
                             </div>
-                        ))}
+                        </div>
+                        <div className="notes">
+                            <h4>Select Note Subject:</h4>
+                            <p className="note-titles" onClick={() => this.newNote(this.props.match.params.id)}>+Create New</p>
+                            {this.state.notes.map(notes => (
+                                <div className="note-titles" key={notes.note_id}>
+                                    <li onClick={() => this.setState({ note: notes.information, title: notes.title, noteId: notes.note_id })}>
+                                        {notes.title}
+                                    </li>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

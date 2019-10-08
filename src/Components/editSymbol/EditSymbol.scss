@@ -1,3 +1,14 @@
+.edit-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 88vw;
+    background-image: linear-gradient(to bottom, #648cac, #354551);
+    color: white;
+    img {
+        filter: invert(100%)
+    }
+}
+
 .edit-meaning img{
     height: 150px;
     width: 150px;
@@ -14,9 +25,36 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    width: 15vw;
 }
 .symbol-column {
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
+.symbol-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    width: 50vw;
+    border: solid;
+    margin:10px;
+    border-radius: 20px;
+    input {
+        width: 150px;
+        height: 10px;
+    }
+    img {
+        height: 150px;
+        width: 150px;
+    }
+    textarea{
+        width: 300px;
+    }
+}
+.info-align{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left:30px;
 }
