@@ -40,6 +40,9 @@ class Nav extends Component {
             <Link to='/map'>
                 <button>Map</button>
             </Link>
+            <Link to='/attribute'>
+                <button>Map Search</button>
+            </Link>
             {/* <button>Panel Menu</button>
             <button>Add Panel</button> */}
         </div>

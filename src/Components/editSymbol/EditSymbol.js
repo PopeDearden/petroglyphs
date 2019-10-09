@@ -75,8 +75,8 @@ class EditSymbol extends Component {
                     meaning: '',
                     language: '',
                 })
-                this.refresh()
             })
+            await this.refresh()
 
     }
     async updateSymbol() {

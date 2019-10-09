@@ -49,13 +49,13 @@
     display: flex;
     flex-wrap: wrap;
     min-width: 70vw;
-    height: auto;
+    height: 90vh;
 }
 
 
 .symbol-display img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     filter: invert(100%);
     transition: transform.1s;
     
@@ -81,7 +81,7 @@
     // border-left: solid;
     padding: 30px;
     // margin: 15px;
-    height: 80vh;
+    height: auto;
     max-width:20vw;
     min-width:15vw;
     // background-image: linear-gradient(to bottom,#1c4c74, transparent)

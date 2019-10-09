@@ -17,6 +17,12 @@ module.exports = {
             }
             )
     },
+    getAttributes: (req, res) => {
+        const db = req.app.get('db')
+        db.attribute_search()
+        .then(locations=>
+            res.status(200).send(locations))
+    },
     getLocation: (req, res) =>{
         const db = req.app.get('db')
         const {id} = req.params
@@ -46,5 +52,13 @@ module.exports = {
         db.delete_order(id)
         .then(table =>
             res.status(200).send('deleted'))
+    },
+    getSymbolLocations: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        console.log('hit' + id)
+        db.search_symbol_location(id)
+        .then(locations =>
+            res.status(200).send(locations))
     }
 }

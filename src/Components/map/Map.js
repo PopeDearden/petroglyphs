@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
-import './Map.scss'
+import './MapStyle.scss'
 
 import axios from "axios";
 import {Link} from 'react-router-dom'
@@ -38,6 +38,7 @@ axios.get('/api/locations')
           Map of all locations
           </h1>
         </div>
+      
       <div className="Map-Frame">
         <Map
         google={this.props.google}
@@ -46,14 +47,12 @@ axios.get('/api/locations')
         initialCenter={{lat: 38.845, lng:-110.29}}
         >
         {this.state.locations.map(location => (
-        <Marker position={{ lat: location.lat, lng: location.long}} title={location.location_name} />
+        <Marker onClick={()=>this.props.history.push(`/location/${location.location_id}`)} position={{ lat: location.lat, lng: location.long}} title={location.location_name} />
         ))}                
         
         </Map>
-      
-
       </div>
-
+    
       </div>
     );
   }

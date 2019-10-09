@@ -1,0 +1,77 @@
+.map-main {
+    max-width: 90vw;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: linear-gradient(to bottom, #648cac, #354551);
+}
+.map-layout {
+    display: flex;
+    height: auto;
+    // flex-direction: row-reverse;
+    width: 90vw;
+    justify-content: flex-start;
+}
+.search-results {
+    // margin-left:10vw;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: solid;
+    // background-color: red;
+    width: 30vw;
+    min-height: 90vh;
+    margin-right:10vw;
+    // margin-left: 5vw;
+    background-color: lightgray;
+    
+    img {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+        border: solid;
+        border-radius: 50%;
+        margin: 10px;
+    }
+}
+.Map-Frame {
+    // width: 90vw;
+}
+.Attribute-Results{
+    display: flex;
+    height: 85vh;
+    width: 50vw;
+    flex-direction: column;
+    // width: 35vw;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-right: 10px;
+    // border: solid;
+    padding: 1px;
+    background-color: lightgray;
+}
+.Attribute-Info {
+    display: flex;
+    flex-direction: row;
+    // width: 30vw;
+    img {
+        border: none;
+        width: 40px;
+        height:40px;
+    }
+    padding: 10px;
+    border: solid .5px rgba(0, 0, 0, 0.212);
+    transition: transform.1s;
+    cursor: pointer;
+}
+.Attribute-Info:hover {
+    color: white;
+    background-image: linear-gradient(to bottom, #648cac, #354551);
+    display: flex;
+    justify-content: center;
+    img {
+        filter: invert(100%);
+    }
+}

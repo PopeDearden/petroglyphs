@@ -73,7 +73,7 @@ class SymbolsMenu extends Component {
                 <div className="selected-symbol">
                     <img src={this.state.selectedImg} alt='hmm' />
                     <h3>{this.state.selectedName}</h3>
-                    <p>Attributes:{this.state.attributes}</p>
+                    <p>Attributes: {this.state.attributes}</p>
                 
                     <h3>Meanings:</h3>
                     <div>
@@ -85,7 +85,10 @@ class SymbolsMenu extends Component {
                         </div>
                     ))}
                     </div>
+                    <div>
                     <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
+                    <button onClick={()=>this.props.history.push(`/mapsearch/${this.state.selectedId}`)}>View Locations</button>
+                    </div>
                 </div>
             </div>
             </div>
