@@ -17,7 +17,7 @@ import MapAttributeSearch from './Components/map/MapAttributeSearch'
 
 export default (
   <Switch>
-    <Route path='/home' component = {Home} />
+    <Route path='/' exact component = {Home} />
     <Route path='/symbolmenu' component={SymbolsMenu} />
     <Route path='/EditSymbol/:id' component={EditSymbol} />
     <Route path='/AddSymbol' component={AddSymbol} />

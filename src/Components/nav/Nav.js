@@ -19,7 +19,7 @@ class Nav extends Component {
     
       return (
         <div className='Nav'>
-            <Link to="/home">
+            <Link to="/">
                 <button>Home</button>
             </Link>
             <Link to='/symbolmenu'>

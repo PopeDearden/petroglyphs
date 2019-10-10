@@ -3,6 +3,7 @@ const initialState = {
     user: null,
     userId: '',
     symbols: [],
+    username:'',
   }
   
   const UPDATE_USER = 'UPDATE_USER';
@@ -15,7 +16,7 @@ const initialState = {
     case UPDATE_SYMBOLS:
         return {...state, symbols: payload}
       case UPDATE_USER:
-        return { ...state, username: payload.username, userId: payload.user_id };
+        return { ...state, username: payload.email, userId: payload.user_id };
       case LOGOUT:
         return initialState;
       default:

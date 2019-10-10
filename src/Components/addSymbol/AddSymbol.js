@@ -24,37 +24,46 @@ class AddSymbol extends Component {
     }
 
     render() {
+        if (this.props.username === 'taylordearden@gmail.com') {
+            return (
+                <div className='add-symbol'>
+                    <div className="search-bar">
+                        <h2 className='name'>Add new symbol</h2>
+                    </div>
+                    <div className="new-symbol">
+                        <img src={this.state.drawing} alt="" />
+                        <div className='form_input_box'>
+                            <p>Symbol Name:</p>
+                            <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
+                        </div>
+                        <div className='form_input_box'>
+                            <p>Symbol Drawing:</p>
+                            <input value={this.state.img} onChange={e => this.setState({ drawing: e.target.value })} />
+                        </div>
+                        <div className='form_text_box'>
+                            <p>Attributes:</p>
+                            <textarea value={this.state.content} onChange={e => this.setState({ attributes: e.target.value })} />
+                        </div>
+                        <button onClick={() => this.submit(this.state)} className='dark_button form_button'>Post</button>
 
-        return (
-            <div className='add-symbol'>
-                <div className="search-bar">
-                    <h2 className='name'>Add new symbol</h2>
+                    </div>
                 </div>
-                <div className="new-symbol">
-                    <img src={this.state.drawing} alt="" />
-                    <div className='form_input_box'>
-                        <p>Symbol Name:</p>
-                        <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
-                    </div>
-                    <div className='form_input_box'>
-                        <p>Symbol Drawing:</p>
-                        <input value={this.state.img} onChange={e => this.setState({ drawing: e.target.value })} />
-                    </div>
-                    <div className='form_text_box'>
-                        <p>Attributes:</p>
-                        <textarea value={this.state.content} onChange={e => this.setState({ attributes: e.target.value })} />
-                    </div>
-                    <button onClick={() => this.submit(this.state)} className='dark_button form_button'>Post</button>
-
-                </div>
+            );
+        }
+        else{
+            alert('access denied')
+            return(
+            <div className="Denied">
+                Contact Taylor, access denied
             </div>
-        );
+            )
+        }
     }
 }
 
 function mapStateToProps(store) {
-    const { id } = store;
-    return { id };
+    const { username } = store;
+    return { username };
 }
 
 export default connect(mapStateToProps, { updateSymbols })(AddSymbol);

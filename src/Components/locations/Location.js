@@ -102,6 +102,7 @@ class Location extends Component {
         this.props.history.push(`/editSymbol/${id}`)
     }
     async newNote(id) {
+        if(this.props.username === 'taylordearden@gmail.com'){
         await axios.post(`/api/notes/${id}`)
             .then(
                 this.setState({
@@ -113,13 +114,23 @@ class Location extends Component {
             )
         await
             this.getNotes(id)
+        }
+        else{
+            swal.fire('Access Denied','','warning')
+        }
     }
     async editNote() {
+        if(this.props.username === 'taylordearden@gmail.com'){
         await axios.put(`/api/notes/${this.state.noteId}`, this.state)
                 await this.getNotes(this.props.match.params.id)
                 await swal.fire('Note Updated')
+        }
+        else{
+            swal.fire('Access Denied','','warning')
+        }
     }
     async deleteNote() {
+        if(this.props.username === 'taylordearden@gmail.com'){
         await axios.delete(`/api/notes/${this.state.noteId}`)
             .then(
                 await this.setState({
@@ -129,6 +140,10 @@ class Location extends Component {
                 )
                 await this.getNotes(this.props.match.params.id)
                 await swal.fire('Note Deleted')
+            } 
+            else{
+                swal.fire('Access Denied','','warning')
+            }
     }
 
     render() {
@@ -245,8 +260,8 @@ class Location extends Component {
 }
 
 function mapStateToProps(store) {
-    const { symbols } = store;
-    return { symbols };
+    const { symbols, username } = store;
+    return { symbols, username };
 }
 
 export default connect(mapStateToProps, { updateSymbols })(Location);
