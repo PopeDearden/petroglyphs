@@ -3,16 +3,25 @@
     flex-direction: column;
     flex-wrap: wrap;
     min-width: 90vw;
+    min-height:90vh;
+    // height: 90vh;
     img {
         height: 200px;
+        border-radius: 5px;
+        transition: transform.3s;
     }
-
+    img:hover{
+        transform: scale(1.05);
+    }
+    
 }
 .Single-Locations {
     margin: 20px;
 }
 .location-icons {
+    height: 90vh;
     display: flex;
-    flex-direction: space-between;
+    // flex-direction: flex-start;
     flex-wrap: wrap;
+    overflow: auto;
 }
