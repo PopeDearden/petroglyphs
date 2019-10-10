@@ -10,7 +10,7 @@ const noteController = require('./noteController')
 const app = express()
 const authCtrl = require('./authController')
 
-app.use( express.static( `${__dirname}/../build` ) );
+
 
 app.use(
     session({
