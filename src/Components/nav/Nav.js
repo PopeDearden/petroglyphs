@@ -14,7 +14,12 @@ class Nav extends Component {
   constructor(props) {
     super(props);
   }
-
+logout=()=>{
+  axios.delete('/auth/logout')
+  .then(
+    window.location.reload()
+  )
+}
   render() {
     
       return (
@@ -43,6 +48,7 @@ class Nav extends Component {
             <Link to='/attribute'>
                 <button>Map Search</button>
             </Link>
+                <button onClick={()=>this.logout()}>Logout</button>
             {/* <button>Panel Menu</button>
             <button>Add Panel</button> */}
         </div>

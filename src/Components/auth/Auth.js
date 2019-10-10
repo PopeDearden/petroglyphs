@@ -46,12 +46,12 @@ class Auth extends Component {
     return (
       <div className='Auth'>
         <div className='auth_container'>
-          <h1 className='auth_title'>Techno-Glyph</h1>
+          <h1 className='auth_title'>Technoglyph</h1>
           <div className='auth_input_box'>
           <input
               onChange={e => this.handleChange('email', e.target.value)}
               type="text"
-              placeholder="Email"
+              placeholder="Username"
             />
             <input
               onChange={e => this.handleChange('password', e.target.value)}
