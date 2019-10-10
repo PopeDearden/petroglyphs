@@ -29,6 +29,5 @@ export default (
     <Route path='/panelBuilder/:id' component={PanelBuilder}/>
     <Route path='/location/:id' component={Location}/>
     <Route path='/attribute' component={MapAttributeSearch}/>
-    
   </Switch>
 )
