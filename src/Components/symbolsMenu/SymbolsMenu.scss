@@ -7,7 +7,7 @@
     // background-image: url('http://towingjanesville.com/wp-content/uploads/2017/04/wicked-witch-grey-rock.jpg');
     // background-image: url('https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-image: url('https://fullyloaded.pizza/wp-content/uploads/2016/08/chalkboard-background-b-1170x731.jpg');
-    background-size: 100%;
+    background-size: cover;
     height: auto;
     min-height: 92vh;
 }
@@ -42,14 +42,19 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
     
 }
 .symbol-map {
     // margin:15px;
+    // position: fixed;
     display: flex;
     flex-wrap: wrap;
     min-width: 70vw;
-    height: 90vh;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 

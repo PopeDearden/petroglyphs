@@ -31,7 +31,7 @@ check(){
   
 }
 render() {
-if(this.state.user === 'no'){
+if(this.state.user === 'n0o'){
   return(
     <div className='App'>
       <Auth 
