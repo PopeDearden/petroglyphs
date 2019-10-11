@@ -20,7 +20,8 @@ $background-rock: url('https://drive.google.com/file/d/1FNRduxzlFKzKfCvWgREGpDLn
 .Main {
   display: flex;
   background-color: lightgray;
-  // max-width: 90vw;
+  min-width:90vw;
+  max-width: 90vw;
   height: auto;
   
 }

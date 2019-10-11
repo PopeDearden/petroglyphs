@@ -1,17 +1,37 @@
 
 .Home {
     display: flex;
-    width:90vw;
+    // width:90vw;
     height:100vh;
-    background-image: url(https://lh3.googleusercontent.com/jtm9ouPTH2UB-RCHcH0zjndo5beUEubgABJysMYnr11cmH8LTh7c_HH4Faq4MLrOg4s_MoD0q2Rix3P6UeDj0Pyj9k5xz4WK4tH1qsoNPCm-WHcZMYrSxHXVPPFNjQBRh4z43u8wVZaD0VTRETCAZGPWv6-E9Og-CMySnS2YLpZBX6FNJfdHgfVba8VE-pMFHUk4Av-SFd706DNPDC7hOMrREUlbcz5pK-y50PKuOKqyPmAnB917Hl5f0WvQ3LwdrOUkmo32CKzYlPFdRPFErTxGUJE8TrxrtztQphKxjYoXl6skueqW1Kpu0_BSbwGAkZcaP9sJScQFgXLHs0Weoo6fNoWAz3swlZaHI1Hmqn4iwu2pUvtep08tGl25A7e_DLX1qbhvAKTpXeKz3Br1GrNA5teMH_dTIcxQ2DyMDSfJ0ySkHL-K5B9MSqB_WUn64lAWd5Wn0FQ1yUx6QBxBDFNi1TgQXnQq8X8628c9nYFzi5Rajn1A2md7MiCJYontg8EI8-FkZZfIq5yR2lamX4gBx8_OlyDiUh2VgpXrSNr_hsG84-YqLuKEWYaxXXEx7Nc8lcD-GE9hHFL17_eaxqZAehuu7-y3n-tyVe-m4MYM1C1jPi2bAcopnLZwU8DVDlnNKJl14MmSP9fMjoGH6yUj7IYzQsXIakJrIsVYmliKa1qnr1uHng=w959-h719-no);
-    align-items: flex-start;
-    justify-content: flex-start;
+    background-image: url(https://lh3.googleusercontent.com/9yhUVLZIYbj4aUX39FYhaxtT7bnay7mrJ1dKeTvb237m7xKRNIvgC8PlzpjraW_IR7CMnHevjS7iVEYg5vBs_RTHEDH1-NfOcJMILursgmZHNX4RMp_bIGz6MgpZDqxs79BUHrAdfQATq_2sEBISvUSsUFR1ShwG4BKELZZ_mecdX8Kqwv_8kdFYArnTo2b1pT86_jMLHK6JNqZP2IupcfV9gZSPAxzVWG9hw4ZIXlVEyZQXEnaAsgoy9qFlSWGQ2FxQOZxlIzXm8gKe-8DbZPY2ZZ8wDQKZ82zheY8jysZFs6cxnTECDFT3z_m7r8PdLzrRZmwCUU5Yyi_MdJpj_gZRk7bHIuiz_TI8Evx89egBUXuuylUqLGIv-fnH7ywLRtR_D0QQYR2y5gtva_xca1O-qoPuZNXf78eVoEoqkmXkqi3BHN9jiBIrUZuo9Oy-jKDfK5KDr4lbsP1WgS7Gt4U23YixeF1p8L2H3sY41yeWOZswxet9Z9xpe9Xh5sAnGX2YeuJxp20fzu3sLQqDWRh4pX0s4NiaBsAEJNjj3ON8b4FDuAfQ2tTp3BxITge1bgxxvVPXKvrxR58qNozlweZcR4ABFul9WLFLntfC1_z2o_0jYpGkY9AjGvmFq_HcU4_v5jHy12y6tAQY2JgP7KkPyyjD5LDPvtrsAI0Szy2vEIJalbp0PaqHh_TJsHutLHUpPJUCaj-BTjY7rkkDkBuWVSNLEx_oJ_wijGb-LO92FLkl=w1920-h748-no);
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
-    background-size: 100%;
+    background-size: 150%;
     background-repeat: no-repeat;
     margin:0px;
     flex-direction: column;
+    min-width:90vw;
+    max-width: 90vw;
 }
 .Home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: fill;
+    background-image: linear-gradient(to bottom, #021625,  transparent);
+    height: 100vh;
+    color: white;
     padding: 50px;
+    h6 {
+        width: 38vw;
+        margin-top:10vh;
+        padding:20px;
+        color: black;
+        border-radius: 20px;
+        // border: solid;
+        background-color: rgba(255, 255, 255, 0.527);
+        // text-align: left;
+    }
 }
