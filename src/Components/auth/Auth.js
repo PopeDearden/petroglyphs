@@ -17,10 +17,10 @@ class Auth extends Component {
     // this.register = this.register.bind(this);
   }
   handleChange(prop, val) {
-      this.setState({
-        [prop]: val
-      })
-    
+    this.setState({
+      [prop]: val
+    })
+
   }
   login = async () => {
     const res = await axios.post('/auth/login', this.state)
@@ -30,36 +30,52 @@ class Auth extends Component {
       console.log(res.data.user)
       this.props.check()
     }
-    
+
     swal.fire(res.data.message)
 
   }
-//   register() {
-//     axios.post('/auth/register', this.state)
-//       .then(res => {
-//         this.props.updateUser(res.data);
-//         this.props.history.push('/dashboard');
-//       })
-//   }
+  //   register() {
+  //     axios.post('/auth/register', this.state)
+  //       .then(res => {
+  //         this.props.updateUser(res.data);
+  //         this.props.history.push('/dashboard');
+  //       })
+  //   }
   render() {
     // console.log(this.state)
     return (
       <div className='Auth'>
         <div className='auth_container'>
-          <h1 className='auth_title'>Technoglyph</h1>
-          <div className='auth_input_box'>
-          <input
-              onChange={e => this.handleChange('email', e.target.value)}
-              type="text"
-              placeholder="Username"
-            />
-            <input
-              onChange={e => this.handleChange('password', e.target.value)}
-              type="password"
-              placeholder="Password"
-            />
-            <button onClick={this.login}>Login</button>
-            {/* <button className='dark_button' onClick={this.register}> Register </button> */}
+          <ul class="slideshow">
+            <li><span>Image 01</span><div></div></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+          </ul>
+          <div className="container">
+            <header>
+              <div className="auth_box">
+              <h1 className='auth_title'>Technoglyph</h1>
+              <h3>A petroglyph analysis database</h3>
+              <div className='auth_input_box'>
+                <input
+                  onChange={e => this.handleChange('email', e.target.value)}
+                  type="text"
+                  placeholder="Username"
+                />
+                <input
+                  onChange={e => this.handleChange('password', e.target.value)}
+                  type="password"
+                  placeholder="Password"
+                />
+                <button onClick={this.login}>Login</button>
+                {/* <button className='dark_button' onClick={this.register}> Register </button> */}
+              </div>
+              </div>
+
+            </header>
           </div>
         </div>
       </div>

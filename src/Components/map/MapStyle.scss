@@ -44,8 +44,9 @@
 .Attribute-Results{
     display: flex;
     height: 85vh;
-    width: 50vw;
-    flex-direction: column;
+    width: 45vw;
+    flex-direction: row;
+    justify-content: flex-start;
     // width: 35vw;
     flex-wrap: wrap;
     overflow: auto;
@@ -57,7 +58,9 @@
 .Attribute-Info {
     display: flex;
     flex-direction: row;
-    // width: 30vw;
+    width: 200px;
+    height: auto;
+    max-height: 10vh;
     img {
         border: none;
         width: 40px;
