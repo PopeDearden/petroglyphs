@@ -23,8 +23,8 @@
     border-right: solid;
     // background-color: red;
     width: 30vw;
-    min-height: 90vh;
-    max-height: 90vh;
+    min-height: 85vh;
+    max-height: 87vh;
     margin-right:10vw;
     // margin-left: 5vw;
     background-color: lightgray;
@@ -43,10 +43,12 @@
 }
 .Attribute-Results{
     display: flex;
-    height: 85vh;
+    // min-height:85vh;
+    max-height: 85vh;
     width: 45vw;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
     // width: 35vw;
     flex-wrap: wrap;
     overflow: auto;

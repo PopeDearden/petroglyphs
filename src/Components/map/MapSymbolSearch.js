@@ -36,8 +36,8 @@ class MapGlyphs extends Component {
     }
     render() {
         const mapStyles = {
-            width: '30vw',
-            height: '50vh',
+            width: '45vw',
+            height: '90vh',
             border: 'solid',
         };
         console.log(this.state.locations)

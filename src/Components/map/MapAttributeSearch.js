@@ -35,7 +35,7 @@ class MapGlyphs extends Component {
     }
     render() {
         const mapStyles = {
-            width: '30vw',
+            width: '42vw',
             height: '85vh',
             
         };
