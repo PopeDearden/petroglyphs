@@ -24,6 +24,7 @@ logout=()=>{
     
       return (
         <div className='Nav'>
+            <div className="line1"></div>
             <Link to="/">
                 <button>Home</button>
             </Link>
