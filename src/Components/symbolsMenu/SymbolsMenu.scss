@@ -55,6 +55,8 @@
     min-width: 70vw;
     max-height: 90vh;
     overflow-y: auto;
+    min-height: 90vh;
+    max-width: 70vw;
 }
 
 
@@ -72,7 +74,6 @@
 }
 .symbol-display {
     margin:0;
-    min-height:90vh;
 }
 .selected-symbol img{
     width: 200px;
