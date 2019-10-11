@@ -27,11 +27,9 @@ logout=()=>{
             <Link to="/">
                 <button>Home</button>
             </Link>
+            <div className="line"></div>
             <Link to='/symbolmenu'>
             <button>Symbol Library</button>
-            </Link>
-            <Link to ='/addsymbol' >
-            <button>Add Symbol</button>
             </Link>
             <Link to='/charts'>
                 <button>Charts</button>
@@ -39,15 +37,20 @@ logout=()=>{
             <Link to='/locations'>
                 <button>Locations</button>
             </Link>
-            <Link to='/addlocations'>
-                <button>Add Locations</button>
-            </Link>
             <Link to='/map'>
                 <button>Map</button>
             </Link>
             <Link to='/attribute'>
-                <button>Map Search</button>
+                <button>Attribute Search</button>
             </Link>
+            <div className="line"></div>
+            <Link to='/addlocations'>
+                <button>Add Locations</button>
+            </Link>
+            <Link to ='/addsymbol' >
+            <button>Add Symbol</button>
+            </Link>
+                <div className="line"></div>
                 <button onClick={()=>this.logout()}>Logout</button>
             {/* <button>Panel Menu</button>
             <button>Add Panel</button> */}
