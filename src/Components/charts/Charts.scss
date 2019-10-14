@@ -1,4 +1,16 @@
+.chart-main {
+    min-width: 90vw;
+    height: 90vh;
+}
+
 .Chart-Container {
     width: 50vw;
     height: 50vh;
+}
+
+@media (max-width: 1100px) {
+    .chart-main {
+        min-width: 100vw;
+        min-height:90vh;
+    }
 }

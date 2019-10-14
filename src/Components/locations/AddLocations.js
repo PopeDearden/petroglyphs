@@ -31,20 +31,20 @@ submit(){
           </div>
           <div className= "new-symbol">
   
-                  <img className="panel-image" src={this.state.drawing} alt=""/>
+                  <img className="panel-image" src={this.state.image} alt=""/>
                   <div className='form_input_box'>
                       <p>Location Name:</p>
                       <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
                   </div>
                   <div className='form_input_box'>
                       <p>Latitude:</p>
-                      <textarea value={this.state.latitude} onChange={e => this.setState({ latitude: e.target.value })} />
+                      <input value={this.state.latitude} onChange={e => this.setState({ latitude: e.target.value })} />
                       <p>Longitude:</p>
                       <input value={this.state.longitude} onChange={e => this.setState({ longitude: e.target.value })} />
                   </div>
                   <div className='form_text_box'>
                       <p>Image:</p>
-                      <textarea value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
+                      <input value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
                   </div>
                   <button onClick={()=>this.submit(this.state)} className='dark_button form_button'>Post</button>
           </div>

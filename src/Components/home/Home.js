@@ -18,7 +18,7 @@ class Home extends Component {
     console.log(this.sessions)
     return (
       <div className="Home">
-        
+
           <div className="Home-text">
           <div className="Header1">
               <h1>TECHN</h1>

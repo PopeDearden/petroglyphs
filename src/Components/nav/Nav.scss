@@ -41,3 +41,52 @@
     margin-bottom:5px;
     border-bottom: solid;
 }
+
+@media (max-width:1100px) {
+    .Nav {
+        background-color: 	#1c4c74;
+        max-width: 90vw;
+        width: 90vw;
+        min-height: 10vh;
+        height: 10vh;
+        margin:0px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        // border-right: d white;
+        flex-wrap: wrap;
+    
+        button{
+            font-size: 1rem;
+            color: white;
+            width:80px;
+            background-color: #648cac;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            // margin-top: 10px;
+            height: 40px;
+            cursor: pointer;
+            overflow: hidden;
+            
+        }
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    .line {
+        // color: #648cac;
+        width: 0vw;
+        // margin-top:20px;
+        // margin-bottom:5px;
+        // border-bottom: solid;
+    }
+    .line1 {
+        color: #648cac;
+        width: 0vw;
+        margin-top:0px;
+        margin-bottom:5px;
+        border-bottom: solid;
+    }
+}

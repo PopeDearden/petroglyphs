@@ -29,6 +29,8 @@ axios.get('/api/locations')
     const mapStyles = {
       width: '80%',
       height: '80%',
+      margin: '0',
+     
     };
     console.log(this.state.locations)
     return (

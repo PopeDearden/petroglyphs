@@ -85,7 +85,7 @@ class SymbolsMenu extends Component {
                         </div>
                     ))}
                     </div>
-                    <div>
+                    <div className="two-buttons">
                     <button onClick={()=>this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
                     <button onClick={()=>this.props.history.push(`/mapsearch/${this.state.selectedId}`)}>View Locations</button>
                     </div>

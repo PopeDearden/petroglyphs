@@ -37,6 +37,9 @@ export default class BarChart extends React.Component {
     const Hopi = res.data.filter((element)=>{
       return element.language ==="Hopi"
     })
+    const Modern = res.data.filter((element)=>{
+      return element.language ==="Modern"
+    })
     this.setState({
       datasets:[
         {
@@ -44,7 +47,7 @@ export default class BarChart extends React.Component {
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
-          data: [Egyptian.length, Mayan.length, Ojibwa.length,Aztec.length, Hopi.length]
+          data: [Egyptian.length, Mayan.length, Ojibwa.length,Aztec.length, Hopi.length, Modern.length, 0]
         }
       ]
     })
@@ -57,9 +60,11 @@ export default class BarChart extends React.Component {
 
 render() {
   return (
-    <div class="Chart-Container">
+    <div className="chart-main">
     <div className="search-bar"> 
+    <h2>Chart: language matchups</h2>
     </div>
+    <div class="Chart-Container">
       <Bar
         data={this.state}
         options={{
@@ -74,6 +79,7 @@ render() {
           }
         }}
       />
+    </div>
     </div>
   );
 }

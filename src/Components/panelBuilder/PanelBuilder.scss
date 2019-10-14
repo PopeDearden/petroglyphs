@@ -6,8 +6,8 @@
     padding-left: 30px;
 }
 .symbol-display-list img{
-    width:48px;
-    height: 48px;
+    width:40px;
+    height: 40px;
     filter: invert(100%);
     transition: transform.1s;
 }
@@ -45,4 +45,55 @@
 }
 .input{
     padding: 30px;
+}
+
+@media(max-width:1100px) {
+    .symbol-list{
+        display: flex;
+        flex-wrap: wrap;
+        width: 20vw;
+        border-right: solid;
+        padding-left: 30px;
+    }
+    .symbol-display-list img{
+        width:40px;
+        height: 40px;
+        filter: invert(100%);
+        transition: transform.1s;
+    }
+    .symbol-display-list img:hover {
+        transform:scale(1.5);
+        filter:invert(100%) drop-shadow(16px 16px 20px cyan) ;
+    }
+    .PanelBuilder {
+        color: white;
+        display: flex;
+        // background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
+        // background-image: url('https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        width:90vw;
+        background-color: #1c4c74;
+    }
+    .row-display {
+        max-width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        // padding:40px;
+        background-color: transparent;
+    }
+    .row {
+        display: flex;
+        flex-wrap: nowrap;
+        max-width: auto;
+        // margin-bottom: -20px;
+    }
+    .panel-image img{
+        width: 25vw;
+        border: solid;
+        border-radius: 20px;
+    
+    }
+    .input{
+        padding: 30px;
+    }
 }
