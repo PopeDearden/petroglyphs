@@ -107,12 +107,14 @@
     .symbol-page {
         display: flex;
         flex-direction: column;
-        color: white;
+        background-image: none;
+        color: black;
+        background-color: lightgray;
         // background-image: linear-gradient(to bottom, black, gray);
         // background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
         // background-image: url('http://towingjanesville.com/wp-content/uploads/2017/04/wicked-witch-grey-rock.jpg');
         // background-image: url('https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-        background-image: url('https://fullyloaded.pizza/wp-content/uploads/2016/08/chalkboard-background-b-1170x731.jpg');
+        // background-image: url('https://fullyloaded.pizza/wp-content/uploads/2016/08/chalkboard-background-b-1170x731.jpg');
         background-size: cover;
         height: auto;
         min-height: 92vh;
@@ -169,14 +171,14 @@
     .symbol-display img{
         width: 40px;
         height: 40px;
-        filter: invert(100%);
+        filter: none;
         transition: transform;
         
     }
     
     .symbol-display img:hover {
         transform: none;
-        filter:invert(70%)
+        filter: none;
     
     }
 
@@ -187,7 +189,7 @@
         width: 200px;
         height: 200px;
         // border: solid;
-        filter: invert(100%)
+        filter: none;
     }
     .selected-symbol {
         display: flex;
