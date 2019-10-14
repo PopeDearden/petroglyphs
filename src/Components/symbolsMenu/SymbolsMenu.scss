@@ -161,14 +161,14 @@
         min-width: 70vw;
         max-height: 90vh;
         overflow-y: auto;
-        min-height: 90vh;
+        min-height: 80vh;
         max-width: 70vw;
     }
     
     
     .symbol-display img{
-        width: 80px;
-        height: 80px;
+        width: 40px;
+        height: 40px;
         filter: invert(100%);
         transition: transform;
         
