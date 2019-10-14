@@ -170,10 +170,15 @@
         width: 80px;
         height: 80px;
         filter: invert(100%);
-        transition: transform.1s;
+        transition: transform;
         
     }
     
+    .symbol-display img:hover {
+        transform: none;
+        filter:invert(70%)
+    
+    }
 
     .symbol-display {
         margin:0;
