@@ -58,12 +58,12 @@
     .symbol-display-list img{
         width:40px;
         height: 40px;
-        filter: invert(100%);
+        filter: none;
         transition: none;
     }
     .symbol-display-list img:hover {
         transform: none;
-        filter:invert(100%);
+        filter:none;
     }
     .PanelBuilder {
         color: white;
