@@ -32,6 +32,11 @@ axios.get('/api/locations')
       margin: '0',
      
     };
+    const mapStyles2 = {
+      width: '100vw',
+      height: '50vh',
+      
+  };
     console.log(this.state.locations)
     return (
       <div className="map-main">
@@ -46,6 +51,19 @@ axios.get('/api/locations')
         google={this.props.google}
         zoom={6}
         style={mapStyles}
+        initialCenter={{lat: 38.845, lng:-110.29}}
+        >
+        {this.state.locations.map(location => (
+        <Marker onClick={()=>this.props.history.push(`/location/${location.location_id}`)} position={{ lat: location.lat, lng: location.long}} title={location.location_name} />
+        ))}                
+        
+        </Map>
+      </div>
+      <div className="Map-Frame2">
+        <Map
+        google={this.props.google}
+        zoom={6}
+        style={mapStyles2}
         initialCenter={{lat: 38.845, lng:-110.29}}
         >
         {this.state.locations.map(location => (

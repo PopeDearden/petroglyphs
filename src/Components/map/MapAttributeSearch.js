@@ -39,6 +39,11 @@ class MapGlyphs extends Component {
             height: '85vh',
             
         };
+        const mapStyles2 = {
+            width: '100vw',
+            height: '50vh',
+            
+        };
         const markerStyles = {
             background: 'white',
         }
@@ -71,6 +76,20 @@ class MapGlyphs extends Component {
                             google={this.props.google}
                             zoom={this.state.zoom}
                             style={mapStyles}
+                            // style={{ width: '40vw', height: '90vh' }}
+                            initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
+                            center={{ lat: this.state.lat, lng: this.state.lng }}
+                        >
+                            {symbolDisplay.map(location => (
+                                <Marker style={markerStyles} onClick={()=>this.props.history.push(`/location/${location.location_id}`)} position={{ lat: location.lat, lng: location.long }} title={location.location_name} />
+                            ))}
+                        </Map>
+                    </div>
+                    <div className="Map-Frame2">
+                        <Map
+                            google={this.props.google}
+                            zoom={this.state.zoom}
+                            style={mapStyles2}
                             // style={{ width: '40vw', height: '90vh' }}
                             initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
                             center={{ lat: this.state.lat, lng: this.state.lng }}

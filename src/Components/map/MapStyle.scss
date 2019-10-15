@@ -8,6 +8,9 @@
     background-image: linear-gradient(to bottom, #648cac, #354551);
     overflow: hidden;
 }
+.Map-Frame2 {
+    display: none;
+}
 .map-layout {
     display: flex;
     height: auto;
@@ -127,8 +130,8 @@
     .Attribute-Results{
         display: flex;
         // min-height:85vh;
-        max-height: 85vh;
-        width: 55vw;
+        max-height: 35vh;
+        width: 100vw;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
@@ -140,17 +143,33 @@
         padding: 1px;
         background-color: lightgray;
     }
+    .Attribute-Info {
+        display: flex;
+        flex-direction: row;
+        width: 40vw;
+        height: auto;
+        max-height: 10vh;
+        img {
+            border: none;
+            width: 30px;
+            height:30px;
+        }
+        padding: 10px;
+        border: solid .5px rgba(0, 0, 0, 0.212);
+        transition: transform.1s;
+        cursor: pointer;
+    }
     .search-results {
         // margin-left:10vw;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         padding: 20px;
         border-right: solid;
         // background-color: red;
-        min-width: 40vw;
-        min-height: 100vh;
-        max-height: 200vh;
+        min-width: 100vw;
+        min-height: 50vh;
+        max-height: 50vh;
         margin-right:0vw;
         // margin-left: 5vw;
         background-color: lightgray;
@@ -167,14 +186,16 @@
     }
     .map-layout {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         height: auto;
         // flex-direction: row-reverse;
         width: 100vw;
-        justify-content: flex-start;
+        // justify-content: flex-start;
     }
     .Map-Frame {
-        width:100vw;
-        // overflow: hidden;
+        display: none;
+    }
+    .Map-Frame2 {
+        display: flex;
     }
 }
