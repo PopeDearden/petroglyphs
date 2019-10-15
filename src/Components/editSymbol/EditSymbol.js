@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { Link } from 'react-router-dom'
 import "./EditSymbol.scss"
+import swal from 'sweetalert2'
 class EditSymbol extends Component {
     constructor(props) {
         super(props);
@@ -84,6 +85,7 @@ class EditSymbol extends Component {
             .then(res => {
                 console.log(res)
             })
+        swal.fire('updated symbol')
         this.refresh()
     }
     deleteSymbol = () => {
