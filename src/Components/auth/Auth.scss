@@ -151,7 +151,7 @@ a{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     padding: 0px 0px 5px 0px;
 }
-\
+
 .container > header h2, p.info{
 	font-size: 16px;
 	font-style: italic;
@@ -500,4 +500,79 @@ a{
 }
 @media screen and (max-width: 600px) { 
 	.slideshow li div h3 { font-size: 50px }
+}
+@media(max-width: 760px) {
+    .Auth{
+        width: 100vw;
+        max-height: 100vh;
+        min-height:100vh;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+        background-size: 150%;
+        overflow: hidden;
+        background-image: url(https://lh3.googleusercontent.com/7DRs8Ovsw2VIeuPqDhpVUl68W5SA_yKNuzD8mIez8C3JI2F6d7kjxGjWi-9oslNHTJ-6Q1G3lB3QpWNykLvO5a6o9hn4GTQNVCZPvjL4ZpOBEgj4G7fWCqUF00u2Dz3ouj6ithJ6LLAMinVOEYknETmUSU7szPXsK9GbXA_zQPfGGLWcdrTkI3UEhcgjD8DnEkt3RBYLqBfa1aC1ZAEo4qWm6MdsfpMymhkGELQtcwWkceMbaCiYQ9TLQ2ALa2sXSMzzdM3uHoXPmoyqXs3aS5kH-Vhc2Gjhsembz55qPlQO_6oKS9Nvo1Eo2KfL7qaqR-yLVmMTpRENR1r-D-I5GZd987JIB9AQGZDm2ZHvYGSBRyBjYPjrU4tdZOHLC9kKsL5kP1muluGXZ3ove8fexm3Ow9VN5bDw0FM9bZ-DgDmfnRYxH7OzRfPOEFJTZzFwHOnArnrRF8V0idupKQRcY6YpoJw6lqs35Vm4hZL_BUaVxDRz2zyU-zU7J9n59XuCd-2sg8Lu2MgsqWwr4_OqAOH6dyFE2pGKqx8leGS-Gctx469qtwudltA_cHkm7ZxuRo6dS4FptIb-_uFVvA4IzO-H6fmRYHJ6HfOyottvjdnrX1d8IzwpJBimI3a_vvzOuxeK7dYM8HZiviMRKgnAHB07qbXQdsQDSOjiY6ux789BsmVcEh9JgtlJZ67t9P6A-lyjBmIjC00go_U4f9H36qVGzkPlambSsaKMMzezioRQVbDi=w958-h373-no);
+        
+        // background-image: linear-gradient(to bottom, #648cac, #354551);
+        // background-image: url(https://lh3.googleusercontent.com/14FHl2TRLwrAeogQ4AYTKkhUByBmYMAHRYFyDy4TL4-yoLj9LW6iuJN_t4U6ZGnMLQVOPg3-FwSoGnwyjjfqvWp9_C451gV22o6y1diohpvMCJDK13SwbfWJdPA82AcvJ04JSeuBNVjMrd9l71GzbYTTOucy5DOJyRd-MQOmoU7uDewtJ9AMbWmTtHo3KFjT0BAjaqkCZIGLy5uWGSbZLSeGIoUDdqrBnSyjSh6ll1sf03qNCGyYJex3aMpC6lg_wCbr_N2dZsA77UJMqvNVx_j6xXhlmhBe3oD1jxi7BUrKv3dc7oHjTjbp5SPXdTnHqK_Y_mqkiIg4aRkP-8rjfLaeT10gHCsDulFF8yK6RlrL4ibFRvOqeoD6mQv7F9uQzGiyCKF8TCuqwOWraY707L0YWVN27VnQDWMk9ebyqBtiwhbWmK3RLkAMAQGTQM1uIDB3iZRM0Ca3pXsOSnXlL6Vdfq7zN-YbytKfwbJY6aYIcrOyBbiR6xwX3QIf1Hb8U12m34ypl9ScHWlXndNCAyOG0n238WNvS3yEyxkEBVPAxookpXvqWTsMJT0i4khTpfkzAv27wdOatxUivsSkYuPC1UEq9X3cSKuzbZBqhwD5UMHpQJWNLGbAgD5g7Ac8795b2Sph-xbXn_GBTz3cz_4bPEH0zMQW-UsLpmbQzT511xFxa_e-lQ=w1920-h748-no);
+        // padding-top: 100px;
+        // padding-bottom:-100px;
+        // background-color: transparent;
+        
+    }
+    .auth_box{
+        font-size: 1rem;
+        background-image: linear-gradient(to bottom,black, transparent, transparent);
+        width: 100vw;
+        height: 80vh;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15vh;
+        // justify-content: center;;
+    }
+    .auth_container {
+        // background-color: transparent;
+        // border: solid;
+        // background-color: black;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        height: 50vh;
+        width: 100vw;
+        // border-radius: 50%;
+        // position: absolute;
+    }
+    .auth_input_box {
+        width: 80vw;
+        background-color: rgba(255, 255, 255, 0.363);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:5vh;
+        border:  rgba(0, 0, 0, 0.137);
+        border-radius: 10px;
+        padding: 10px;
+        // background-image: linear-gradient(to bottom, white, transparent);
+        input {
+            width: 50vw;
+            margin: 15px;
+            // background: transparent;
+            color: black;
+            height: 20px;
+            // border: solid;
+    
+    
+        }
+        button {
+            border: solid;
+            background-color: transparent;
+            width: 50vw;
+        }
+    }
+    
 }

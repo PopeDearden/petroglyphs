@@ -14,3 +14,9 @@
         min-height:90vh;
     }
 }
+@media (max-width: 760px) {
+    .Chart-Container {
+        min-width: 100vw;
+        min-height:90vh;
+    }
+}

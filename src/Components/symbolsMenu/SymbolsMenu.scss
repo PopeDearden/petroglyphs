@@ -219,3 +219,120 @@
     }
 
 }
+@media (max-width:760px) {
+    .symbol-page {
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+        color: black;
+        background-color: lightgray;
+        // background-image: linear-gradient(to bottom, black, gray);
+        // background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
+        // background-image: url('http://towingjanesville.com/wp-content/uploads/2017/04/wicked-witch-grey-rock.jpg');
+        // background-image: url('https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        // background-image: url('https://fullyloaded.pizza/wp-content/uploads/2016/08/chalkboard-background-b-1170x731.jpg');
+        background-size: cover;
+        height: auto;
+        min-height: 92vh;
+    }
+    .search-bar {
+        color: white;
+        height:8vh;
+        width: auto;
+        // background-image: linear-gradient(to right, #1c4c74, transparent);
+        background-color: #1c4c74;
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        padding-left: 8px;
+        padding-top: 5px;
+        // border-bottom: solid;
+        input {
+            font-size: .75rem;
+            height: 40px;
+            border: none;
+            border-bottom: solid;
+            width: relative;
+            margin-left: 40px;
+            background-color: transparent;
+            color: white;
+        }
+        h1 {
+            display: flex;
+            font-size: .75rem;
+        }
+    }
+    
+    .symbol-menu {
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        ::-webkit-scrollbar { 
+            display: none; 
+        }
+        
+    }
+    .symbol-map {
+        // margin:15px;
+        // position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 70vw;
+        max-height: 200vh;
+        overflow-y: auto;
+        min-height: 80vh;
+        max-width: 100vw;
+        
+    }
+    
+    
+    .symbol-display img{
+        width: 40px;
+        height: 40px;
+        filter: none;
+        transition: transform;
+        
+    }
+    
+    .symbol-display img:hover {
+        transform: none;
+        filter: none;
+    
+    }
+
+    .symbol-display {
+        margin:0;
+    }
+    .selected-symbol img{
+        width: 100px;
+        height: 100px;
+        // border: solid;
+        filter: none;
+    }
+    .selected-symbol {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // border-left: solid;
+        padding: 30px;
+        // margin: 15px;
+        height: auto;
+        max-width:100vw;
+        min-width:15vw;
+        // background-image: linear-gradient(to bottom,#1c4c74, transparent)
+     
+    }
+    .meaning-text {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .two-buttons {
+     display: flex;
+     flex-direction: column;
+     button {
+         width: 150px;
+     }   
+    }
+
+}

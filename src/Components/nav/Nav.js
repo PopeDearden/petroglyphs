@@ -30,7 +30,7 @@ logout=()=>{
             </Link>
             <div className="line"></div>
             <Link to='/symbolmenu'>
-            <button>Symbol Library</button>
+            <button>Library</button>
             </Link>
             <Link to='/charts'>
                 <button>Charts</button>

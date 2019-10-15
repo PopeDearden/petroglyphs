@@ -18,7 +18,7 @@
         border-radius: 5px;
         // margin-bottom: 30px;
         margin-top: 10px;
-        height: 30px;
+        height: 35px;
         cursor: pointer;
         
     }
@@ -87,6 +87,57 @@
         width: 0vw;
         margin-top:0px;
         margin-bottom:5px;
+        border-bottom: solid;
+    }
+}
+@media(max-width: 760px) {
+    .Nav {
+        background-color: 	#1c4c74;
+        min-width: 80vw;
+        max-width: 80vw;
+        min-height: 15vh;
+        height: auto;
+        margin:0px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        // border-right: d white;
+        flex-wrap: wrap;
+    
+        button{
+            font-size: .65rem;
+            color: white;
+            width: 15vw;
+            background-color: #648cac;
+            border: none;
+            border-radius: 5px;
+            margin-right: 0px;
+            margin-top: 0px;
+            height: 5vh;
+            cursor: pointer;
+            overflow: hidden;
+            
+        }
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    .line {
+        display: none;
+        color: #648cac;
+        width: 0vw;
+        height:0vw;
+        margin-top:0px;
+        margin-bottom:0px;
+        border-bottom: solid;
+    }
+    .line1 {
+        display: none;
+        color: #648cac;
+        width: 0vw;
+        margin-top:0px;
+        margin-bottom:0px;
         border-bottom: solid;
     }
 }
