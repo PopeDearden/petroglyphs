@@ -6,7 +6,7 @@ export default class BarChart extends React.Component {
   constructor() {
     super()
     this.state = {
-      labels: ['Egyptian', 'Mayan', 'Ojibwa', 'Aztec', 'Hopi', 'Modern'],
+      labels: ['Egyptian', 'Mayan', 'Ojibwa', 'Aztec', 'Hopi', 'Hebrew', 'Modern'],
       datasets: [
         {
           label: 'Rainfall',
@@ -37,6 +37,9 @@ export default class BarChart extends React.Component {
     const Hopi = res.data.filter((element)=>{
       return element.language ==="Hopi"
     })
+    const Hebrew = res.data.filter((element)=>{
+      return element.language ==="Hebrew"
+    })
     const Modern = res.data.filter((element)=>{
       return element.language ==="Modern"
     })
@@ -47,7 +50,7 @@ export default class BarChart extends React.Component {
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
-          data: [Egyptian.length, Mayan.length, Ojibwa.length,Aztec.length, Hopi.length, Modern.length, 0]
+          data: [Egyptian.length, Mayan.length, Ojibwa.length,Aztec.length, Hopi.length, Hebrew.length, Modern.length, 0]
         }
       ]
     })
