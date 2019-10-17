@@ -75,12 +75,12 @@ class SymbolsMenu extends Component {
                     <h3>{this.state.selectedName}</h3>
                     <p>Attributes: {this.state.attributes}</p>
                 
-                    <h3>Meanings:</h3>
+                    <h3><u>Meanings:</u></h3>
                     <div>
                     {this.state.meanings.map(meanings => (
                         <div key={meanings.meaning_text}>
                             
-                            <p> {meanings.language}: {meanings.meaning_text}</p>
+                            <p><b>{meanings.language}:</b> {meanings.meaning_text}</p>
 
                         </div>
                     ))}
