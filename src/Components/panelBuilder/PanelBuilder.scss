@@ -97,3 +97,57 @@
         padding: 30px;
     }
 }
+@media(max-width:760px) {
+    .symbol-list{
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        border-right: solid;
+        padding-left: 30px;
+    }
+    .symbol-display-list img{
+        width:40px;
+        height: 40px;
+        filter: none;
+        transition: none;
+    }
+    .symbol-display-list img:hover {
+        transform: none;
+        filter:none;
+    }
+    .PanelBuilder {
+        color: white;
+        display: flex;
+        // background-image: url('https://wallpaperplay.com/walls/full/c/6/c/68292.jpg');
+        // background-image: url('https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        width:95vw;
+        background-color: #1c4c74;
+    }
+    .row-display {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding:0px;
+        background-color: transparent;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: auto;
+        // margin-bottom: -20px;
+    }
+    .panel-image img{
+        width: 100vw;
+        border: solid;
+        border-radius: 20px;
+    
+    }
+    .input{
+        padding: 30px;
+    }
+    .row {
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+}

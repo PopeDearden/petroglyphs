@@ -70,6 +70,9 @@
         img {
             filter: invert(100%)
         }
+        button {
+            width: 30vw;
+        }
     }
     
     .edit-meaning img{
@@ -102,6 +105,70 @@
         width: 80vw;
         border: solid;
         margin:10px;
+        border-radius: 20px;
+        input {
+            width: 150px;
+            height: 20px;
+        }
+        img {
+            height: 150px;
+            width: 150px;
+        }
+        textarea{
+            width: 300px;
+        }
+    }
+    .info-align{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left:30px;
+    }
+}
+@media(max-width:760px){
+    .edit-main {
+        display: flex;
+        flex-direction: column;
+        min-width: 100vw;
+        height: auto;
+        background-image: linear-gradient(to bottom, #648cac, #354551);
+        color: white;
+        img {
+            filter: invert(100%)
+        }
+    }
+    
+    .edit-meaning img{
+        height: 150px;
+        width: 150px;
+        border: solid;
+    }
+    .edit-meaning {
+        width: 100vw;
+        // padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .meaning-column {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: auto;
+    }
+    .symbol-column {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .symbol-info {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        // padding: 30px;
+        width: 80vw;
+        border: solid;
+        // margin:10px;
         border-radius: 20px;
         input {
             width: 150px;
