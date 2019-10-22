@@ -5,7 +5,7 @@ import Home from './Components/home/Home'
 import SymbolsMenu from './Components/symbolsMenu/SymbolsMenu'
 import AddSymbol from './Components/addSymbol/AddSymbol'
 import EditSymbol from './Components/editSymbol/EditSymbol'
-
+import About from './Components/home/About'
 import BarChart from './Components/charts/BarChart'
 import Locations from './Components/locations/locations'
 import MapGlyphs from './Components/map/Map'
@@ -29,5 +29,6 @@ export default (
     <Route path='/panelBuilder/:id' component={PanelBuilder}/>
     <Route path='/location/:id' component={Location}/>
     <Route path='/attribute' component={MapAttributeSearch}/>
+    <Route path='/about' component={About}/>
   </Switch>
 )

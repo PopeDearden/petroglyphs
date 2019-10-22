@@ -68,15 +68,18 @@ class Auth extends Component {
               <div className='auth_input_box'>
                 <input
                   onChange={e => this.handleChange('email', e.target.value)}
+                  value = {this.state.email}
                   type="text"
                   placeholder="Username"
                 />
                 <input
                   onChange={e => this.handleChange('password', e.target.value)}
+                  value ={this.state.password}
                   type="password"
                   placeholder="Password"
                 />
                 <button onClick={this.login}>Login</button>
+                <button onClick={()=>this.setState({email: 'guest', password: '123'})}>I'm a guest</button>
                 {/* <button className='dark_button' onClick={this.register}> Register </button> */}
               </div>
               </div>
