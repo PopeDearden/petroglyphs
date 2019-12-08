@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { updateSymbols } from '../../ducks/reducer';
 import './PanelBuilder.scss'
 
-
+// this is just a note
 
 class PanelBuilder extends Component {
     constructor(props) {
@@ -154,6 +154,7 @@ class PanelBuilder extends Component {
                                 </div>
                             ))}
                         </div>
+                        
                         <div className='row'>
                             {row5.map(symbol => (
                                 <div className='symbol-display-list'>
