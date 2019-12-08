@@ -66,7 +66,6 @@ class MapGlyphs extends Component {
                             <div onClick={()=>this.setState({zoom: 8, lat: location.lat, lng: location.long})} className="Attribute-Info">
                             <img src={location.img_draw} alt=""/>
                             <p>{location.location_name}</p>    
-                            
                             </div>
                             
                         ))}

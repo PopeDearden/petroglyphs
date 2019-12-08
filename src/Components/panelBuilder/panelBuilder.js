@@ -94,6 +94,9 @@ class PanelBuilder extends Component {
         let row4 = this.state.table.filter((element) => {
             return element.row === 4
         })
+        let row5 = this.state.table.filter((element) => {
+            return element.row === 5
+        })
         // console.log(row1)
         console.log(this.state.locationInfo)
         if (this.props.username === 'taylordearden@gmail.com') {
@@ -145,6 +148,14 @@ class PanelBuilder extends Component {
                         </div>
                         <div className='row'>
                             {row4.map(symbol => (
+                                <div className='symbol-display-list'>
+                                    <img onDoubleClick={() => this.deleteOrder(symbol.order_id)} src={symbol.img_draw} alt={symbol.symbol_name} />
+
+                                </div>
+                            ))}
+                        </div>
+                        <div className='row'>
+                            {row5.map(symbol => (
                                 <div className='symbol-display-list'>
                                     <img onDoubleClick={() => this.deleteOrder(symbol.order_id)} src={symbol.img_draw} alt={symbol.symbol_name} />
 

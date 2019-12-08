@@ -159,6 +159,9 @@ class Location extends Component {
         let row4 = this.state.table.filter((element) => {
             return element.row === 4
         })
+        let row5 = this.state.table.filter((element) => {
+            return element.row === 5
+        })
         // console.log(row1)
         // console.log(this.state.notes)
         return (
@@ -202,6 +205,14 @@ class Location extends Component {
                                     </div>
                                 ))}
                             </div>
+                            <div className='row'>
+                                {row5.map(symbol => (
+                                    <div className='symbol-display-list'>
+                                        <img onClick={() => this.viewMeaning(symbol.img_draw, symbol.symbol_id, symbol.symbol_name, symbol.attributes)} src={symbol.img_draw} alt={symbol.symbol_name} />
+
+                                    </div>
+                                ))}
+                            </div>
                             <div className="panel-image">
                                 <img src={this.state.locationInfo.location_imgae} alt="" srcset="" />
                                 <p>Right click on panel image and select, "Open image in new tab" to view full image".</p>
@@ -226,6 +237,7 @@ class Location extends Component {
                                 ))}
                             </div>
                             <button onClick={() => this.editSymbol(this.state.selectedId)}>Edit Symbol Info</button>
+                            <button onClick={()=>this.props.history.push(`/mapsearch/${this.state.selectedId}`)}>View Locations</button>
                         </div>
 
                     </div>

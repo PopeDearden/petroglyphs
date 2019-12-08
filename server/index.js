@@ -38,6 +38,7 @@ app.get('/api/paneltable/:id', locationController.getPanelTable)
 app.get('/api/notes/:id', noteController.getNotes)
 app.get('/api/symbol/location/:id', locationController.getSymbolLocations)
 app.get('/api/attributes', locationController.getAttributes)
+
 app.post('/api/symbols', symbController.addSymbol)
 app.post('/api/meaning/:id', symbController.addMeaning)
 app.post('/api/location', locationController.addLocation)
