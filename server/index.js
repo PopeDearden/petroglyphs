@@ -52,6 +52,7 @@ app.delete('/api/notes/:id', noteController.deleteNote)
 
 app.put('/api/symbol/:id', symbController.updateSymbol)
 app.put('/api/notes/:id', noteController.editNote)
+app.put('/api/location/:id', locationController.editLocation)
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)

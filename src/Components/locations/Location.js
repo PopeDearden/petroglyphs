@@ -216,6 +216,7 @@ class Location extends Component {
                             <div className="panel-image">
                                 <img src={this.state.locationInfo.location_imgae} alt="" srcset="" />
                                 <p>Right click on panel image and select, "Open image in new tab" to view full image".</p>
+                                <button onClick={() => this.props.history.push(`/editlocation/${this.props.match.params.id}`)}>Edit Panel Info</button>
                             </div>
                             <button onClick={() => this.editPanel(this.props.match.params.id)}>Edit Panel Symbols</button>
                         </div>

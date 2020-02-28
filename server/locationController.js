@@ -60,5 +60,14 @@ module.exports = {
         db.search_symbol_location(id)
         .then(locations =>
             res.status(200).send(locations))
+    },
+    editLocation: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        const { name, long, lat, image } = req.body
+        console.log(name, long, lat, image)
+        db.edit_location([id, name, long, lat, image])
+        .then(location=> 
+          res.status(200).send(location)  )
     }
 }

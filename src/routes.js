@@ -13,6 +13,7 @@ import MapSearch from './Components/map/MapSymbolSearch'
 import AddLocations from './Components/locations/AddLocations'
 import PanelBuilder from './Components/panelBuilder/PanelBuilder'
 import Location from './Components/locations/Location'
+import EditLocation from './Components/locations/editLocation'
 import MapAttributeSearch from './Components/map/MapAttributeSearch'
 
 export default (
@@ -28,6 +29,7 @@ export default (
     <Route path='/addlocations' component={AddLocations}/>
     <Route path='/panelBuilder/:id' component={PanelBuilder}/>
     <Route path='/location/:id' component={Location}/>
+    <Route path='/editlocation/:id' component={EditLocation}/>
     <Route path='/attribute' component={MapAttributeSearch}/>
     <Route path='/about' component={About}/>
   </Switch>
