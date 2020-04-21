@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import {Link} from 'react-router-dom'
+import "./Location.scss"
 
 class AddLocations extends Component {
   constructor(props) {
@@ -30,9 +31,8 @@ submit(){
            <h1>Add new location</h1>
           </div>
           <div className= "new-symbol">
-  
                   <img className="panel-image" src={this.state.image} alt=""/>
-                  <div className='form_input_box'>
+                  <div className="form_input_box">
                       <p>Location Name:</p>
                       <input value={this.state.name} onChange={e => this.setState({ name: e.target.value })} />
                   </div>
@@ -42,9 +42,9 @@ submit(){
                       <p>Longitude:</p>
                       <input value={this.state.longitude} onChange={e => this.setState({ longitude: e.target.value })} />
                   </div>
-                  <div className='form_text_box'>
+                  <div className='form_input_box'>
                       <p>Image:</p>
-                      <input value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
+                      <textarea value={this.state.image} onChange={e => this.setState({ image: e.target.value })} />
                   </div>
                   <button onClick={()=>this.submit(this.state)} className='dark_button form_button'>Post</button>
           </div>
