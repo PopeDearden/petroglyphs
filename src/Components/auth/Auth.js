@@ -79,7 +79,7 @@ class Auth extends Component {
                   placeholder="Password"
                 />
                 <button onClick={this.login}>Login</button>
-                <button onClick={()=>this.setState({email: 'guest_user', password: '23Rock23'})}>I'm a guest</button>
+                {/* <button onClick={()=>this.setState({email: 'guest_user', password: '23Rock23'})}>I'm a guest</button> */}
                 {/* <button className='dark_button' onClick={this.register}> Register </button> */}
               </div>
               </div>

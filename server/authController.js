@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     async register(req, res) {
         const db = req.app.get('db')
-        const { email, password, name } = req.body
+        const { email, password, name, firstName, lastName, type, organization, } = req.body
 
         // Check to see if the user has already registered
         const user = await db.find_email(email)
