@@ -27,9 +27,9 @@ module.exports = {
     getAllMeanings: (req, res) => {
         const db = req.app.get('db')
         db.get_meanings()
-        .then(meanings=>{
-            res.status(200).send(meanings)
-        })
+            .then(meanings => {
+                res.status(200).send(meanings)
+            })
     },
     addMeaning: (req, res) => {
         const id = req.params.id
@@ -46,9 +46,9 @@ module.exports = {
     },
     deleteSymbol: (req, res) => {
         const id = req.params.id
-        const db =req.app.get('db')
+        const db = req.app.get('db')
         db.delete_symbol(id)
-        .then (res.status(200).send('deleted symbol'))
+            .then(res.status(200).send('deleted symbol'))
     },
     addSymbol: (req, res) => {
         const { name, drawing, attributes } = req.body
@@ -60,13 +60,30 @@ module.exports = {
             )
     },
     updateSymbol: (req, res) => {
-        const { name, image, attributes } = req.body
+        const { name, image, attributes, type } = req.body
         const id = req.params.id
         const db = req.app.get('db')
-        db.update_symbol([ name, image, attributes, id ])
+        db.update_symbol([name, image, attributes, id, type])
             .then(symbols => {
                 res.status(200).send(symbols)
             })
+
+    },
+    addType: (req, res) => {
+        const { name, description } = req.body
+        const db = req.app.get('db')
+        db.add_type([name, description])
+            .then(types => {
+                res.status(200).send(types)
+            }
+            )
+    },
+    getTypes: (req, res) => {
+        const db = req.app.get('db')
+       db.get_types()
+       .then(types => {
+           res.status(200).send(types)
+       })
 
     },
 }

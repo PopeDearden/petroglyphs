@@ -1,0 +1,1 @@
+select * from symbol_type;

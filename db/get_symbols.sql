@@ -1,1 +1,2 @@
-SELECT * FROM symbols;
+select * from symbols
+order by symbol_name asc;

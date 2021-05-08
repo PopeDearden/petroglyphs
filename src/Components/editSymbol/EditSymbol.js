@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 import "./EditSymbol.scss"
 import swal from 'sweetalert2'
+
 class EditSymbol extends Component {
     constructor(props) {
         super(props);
@@ -17,6 +18,8 @@ class EditSymbol extends Component {
             image: "",
             attributes: "",
             delete: 0,
+            type: 0,
+            types: []
 
         };
         this.deleteMeaning = this.deleteMeaning.bind(this)
@@ -39,11 +42,16 @@ class EditSymbol extends Component {
                 this.setState({
                     image: res.data[0].img_draw,
                     name: res.data[0].symbol_name,
-                    attributes: res.data[0].attributes
+                    attributes: res.data[0].attributes,
+                    type: res.data[0].type
 
                 })
             }
             )
+        axios.get('/api/types')
+            .then(res => {
+                this.setState({types: res.data})
+            })
     }
     refresh() {
         const { id } = this.props.match.params
@@ -97,6 +105,10 @@ class EditSymbol extends Component {
             alert('BOOOO! Wrong id')
         }
     }
+    handleTypeChange = (e) => {
+        this.setState({type: e.target.value})
+        console.log(e.target.value)
+    }
 
 
     render() {
@@ -118,10 +130,16 @@ class EditSymbol extends Component {
                             <p>Enter symbol id to delete:</p><input onChange={e => this.setState({ delete: e.target.value })} />
                             <button onClick={() => this.deleteSymbol()}>Delete Symbol</button>
                         </div>
-                        <div className="align-info">
+                        <div className="info-align">
                             <p>Attributes:</p>
-                            <textarea className="Paragraph" value={this.state.attributes} onChange={e => this.setState({ attributes: e.target.value })} />
-
+                            <textarea className="Paragraph" />
+                            <select value={this.state.type} onChange={this.handleTypeChange}>
+                                <option>No Type Assigned</option>
+                                {this.state.types.map((item, index)=> (
+                                    <option key={index} value={item.type_id}>{item.name}</option>
+                                ))}
+                            </select>
+                            <p>{this.state.type}</p>
                         </div>
 
                     </div>

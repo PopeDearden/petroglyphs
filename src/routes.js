@@ -15,6 +15,9 @@ import PanelBuilder from './Components/panelBuilder/PanelBuilder'
 import Location from './Components/locations/Location'
 import EditLocation from './Components/locations/editLocation'
 import MapAttributeSearch from './Components/map/MapAttributeSearch'
+import Types from './Components/type/Types';
+
+
 
 export default (
   <Switch>
@@ -32,5 +35,7 @@ export default (
     <Route path='/editlocation/:id' component={EditLocation}/>
     <Route path='/attribute' component={MapAttributeSearch}/>
     <Route path='/about' component={About}/>
+    <Route path='/types' component={Types}/>
+
   </Switch>
 )

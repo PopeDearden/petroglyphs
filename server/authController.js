@@ -49,6 +49,7 @@ module.exports = {
         if (!result) return res.status(200).send({ message: 'Incorrect password' })
         // if they do match, add user to sessions
         const { name, is_admin: isAdmin, user_id: userId } = user[0]
+        await db.update_timestamp([userId])
         req.session.user = { email, name, userId, isAdmin }
         // send session.user back to front end
         res
@@ -64,6 +65,8 @@ module.exports = {
     },
     checkUser: async (req, res) => {
         if(req.session.user) {
+            const db = req.app.get('db')
+            await db.update_timestamp([req.session.userId])
             res.status(200).send(req.session.user)
         } else {
             res.status(200).send('no')

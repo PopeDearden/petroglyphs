@@ -1,0 +1,22 @@
+.Types {
+    margin-left: 2em;
+    input {
+        font-size: 1.2em;
+        margin-right: 1em; 
+    }
+}
+.types-chart {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    .type-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+        width: 100%;
+        border-top: 1px solid black;
+        p {
+            margin-top: 1em;
+        }
+    }
+}

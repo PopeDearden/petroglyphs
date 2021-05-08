@@ -26,6 +26,7 @@ check(){
     this.setState({
       user: res.data
     })
+
   })
   
 }
