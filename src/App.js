@@ -26,7 +26,6 @@ check(){
     this.setState({
       user: res.data
     })
-    console.log('got hit again')
   })
   
 }
