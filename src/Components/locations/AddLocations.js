@@ -18,14 +18,12 @@ class AddLocations extends Component {
   componentDidMount () {
     axios.get('/auth/check')
     .then(res => {
-        console.log(res.data)
         this.setState({auth: res.data.isAdmin})
     })
   }
 submit(){
   axios.post('/api/location/', this.state)
   .then(res=>{
-    console.log(res)
     this.props.history.push('/location')
   })
 }

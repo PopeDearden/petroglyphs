@@ -32,7 +32,7 @@ class Locations extends Component {
 
 
   render() {
-    console.log(this.state.locations)
+
     return (
       <div className="Locations">
         <div className="search-bar">

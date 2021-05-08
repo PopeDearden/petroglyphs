@@ -6,7 +6,7 @@ module.exports = {
             .then(notes => {
                 res.status(200).send(notes)
             })
-        console.log('getting notes...')
+
     },
     addNote: (req, res) => {
         const id = req.params.id
@@ -18,7 +18,6 @@ module.exports = {
     },
     editNote: (req, res) => {
         const { noteId, title, note } = req.body
-        console.log(note)
         const db = req.app.get('db')
         db.update_note([noteId, title, note])
             .then(notes => {

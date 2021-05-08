@@ -31,7 +31,6 @@ class PanelBuilder extends Component {
     componentDidMount() {
         axios.get('/auth/check')
         .then(res => {
-            console.log(res.data)
             this.setState({auth: res.data.isAdmin})
         })
         this.getSymbols()
@@ -53,7 +52,6 @@ class PanelBuilder extends Component {
                 this.setState({
                     table: res.data,
                 })
-                console.log(res.data)
             })
     }
     getPanelInfo() {
@@ -68,7 +66,6 @@ class PanelBuilder extends Component {
     addToPanel(id) {
         axios.post(`/api/order/${id}`, this.state)
             .then(res => {
-                console.log(res)
                 this.getPanelTable(this.state.locationId)
                 this.setState({
                     row: "",
@@ -102,8 +99,7 @@ class PanelBuilder extends Component {
         let row5 = this.state.table.filter((element) => {
             return element.row === 5
         })
-        // console.log(row1)
-        console.log(this.state.locationInfo)
+
         if (this.state.auth) {
             return (
                 <div className="PanelBuilder">

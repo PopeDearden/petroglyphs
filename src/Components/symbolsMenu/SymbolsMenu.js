@@ -44,7 +44,6 @@ class SymbolsMenu extends Component {
                 this.setState({
                     meanings: res.data
                 })
-                console.log(res.data)
             })
 
     }

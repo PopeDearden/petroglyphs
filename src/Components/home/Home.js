@@ -15,7 +15,6 @@ class Home extends Component {
 
 
   render() {
-    console.log(this.sessions)
     return (
       <div className="Home">
 

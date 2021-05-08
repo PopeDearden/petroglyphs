@@ -41,7 +41,6 @@ class Location extends Component {
     componentDidMount() {
         axios.get('/auth/check')
         .then(res => {
-            console.log(res.data)
             this.setState({auth: res.data.isAdmin})
         })
         this.getSymbols()
@@ -55,7 +54,6 @@ class Location extends Component {
     getNotes(id) {
         axios.get(`/api/notes/${id}`)
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     notes: res.data,
                 })
@@ -99,7 +97,6 @@ class Location extends Component {
                 this.setState({
                     meanings: res.data
                 })
-                console.log(res.data)
             })
 
     }
@@ -167,8 +164,6 @@ class Location extends Component {
         let row5 = this.state.table.filter((element) => {
             return element.row === 5
         })
-        // console.log(row1)
-        // console.log(this.state.notes)
         return (
             <div className="Location">
                 <div className="search-bar">

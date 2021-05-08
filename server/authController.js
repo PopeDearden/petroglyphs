@@ -33,7 +33,6 @@ module.exports = {
     async login(req, res) {
         const db = req.app.get('db')
         const { email, password } = req.body
-        console.log(email, password)
         // check if user exists (and the hash)
         const user = await db.find_user(email)
         // if user doesn't exist, send appropriate response
@@ -55,11 +54,9 @@ module.exports = {
         res.status(200).send({ message: 'Logged out', loggedIn: false })
     },
     getUser: async (req, res) => {
-        console.log(req.session.user)
         res.status(200).send(req.session.user)
     },
     checkUser: async (req, res) => {
-        console.log('hit')
         if(req.session.user) {
             res.status(200).send(req.session.user)
         } else {

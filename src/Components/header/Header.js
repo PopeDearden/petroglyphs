@@ -29,7 +29,7 @@ class Header extends Component {
       this.setState({
         user: res.data
       })
-      console.log(res.data)
+
     })
   }
 

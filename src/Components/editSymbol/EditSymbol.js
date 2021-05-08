@@ -26,7 +26,6 @@ class EditSymbol extends Component {
         const { id } = this.props.match.params
         axios.get('/auth/check')
         .then(res => {
-            console.log(res.data)
             this.setState({auth: res.data.isAdmin})
         })
         axios.get(`/api/meaning/${id}`)
@@ -34,7 +33,6 @@ class EditSymbol extends Component {
                 this.setState({
                     meanings: res.data
                 })
-                console.log(res.data)
             })
         axios.get(`/api/symbol/${id}`)
             .then(res => {
@@ -54,7 +52,6 @@ class EditSymbol extends Component {
                 this.setState({
                     meanings: res.data
                 })
-                console.log(res.data)
             })
         axios.get(`/api/symbol/${id}`)
             .then(res => {
@@ -69,14 +66,12 @@ class EditSymbol extends Component {
     async deleteMeaning(id) {
         await axios.delete(`/api/meaning/${id}`)
             .then(res => {
-                // console.log(res.data)
                 this.refresh()
             })
     }
     async addMeaning(id) {
         await axios.post(`/api/meaning/${id}`, this.state)
             .then(res => {
-                console.log(res)
                 this.setState({
                     meaning: '',
                     language: '',

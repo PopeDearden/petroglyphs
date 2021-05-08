@@ -19,7 +19,6 @@ class AddSymbol extends Component {
     componentDidMount () {
         axios.get('/auth/check')
         .then(res => {
-            console.log(res.data)
             this.setState({auth: res.data.isAdmin})
         })
     }

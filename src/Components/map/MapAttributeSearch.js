@@ -29,7 +29,7 @@ class MapGlyphs extends Component {
                 this.setState({
                     locations: res.data,
                 })
-                console.log(res.data)
+
             }
             )
     }

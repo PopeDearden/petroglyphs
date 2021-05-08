@@ -18,7 +18,6 @@ module.exports = {
 
     getMeanings: (req, res) => {
         const id = req.params.id
-        console.log(req.params)
         const db = req.app.get('db')
         db.get_meaning(id)
             .then(meanings => {
@@ -35,7 +34,6 @@ module.exports = {
     addMeaning: (req, res) => {
         const id = req.params.id
         const { meaning, language } = req.body
-        console.log(meaning, language)
         const db = req.app.get('db')
         db.add_meaning(id, meaning, language)
             .then(res.status(200).send('did it'))
@@ -54,7 +52,6 @@ module.exports = {
     },
     addSymbol: (req, res) => {
         const { name, drawing, attributes } = req.body
-        console.log(name, drawing, attributes)
         const db = req.app.get('db')
         db.add_symbol([name, drawing, attributes])
             .then(symbols => {
@@ -65,7 +62,6 @@ module.exports = {
     updateSymbol: (req, res) => {
         const { name, image, attributes } = req.body
         const id = req.params.id
-        console.log(id)
         const db = req.app.get('db')
         db.update_symbol([ name, image, attributes, id ])
             .then(symbols => {

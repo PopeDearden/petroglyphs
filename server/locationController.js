@@ -2,7 +2,6 @@
 module.exports = {
     addLocation: (req, res) => {
         const { name, longitude, latitude, image } = req.body
-        console.log(name, longitude, latitude, image)
         const db = req.app.get('db')
         db.add_location([name, longitude, latitude, image])
             .then(locations => {
@@ -77,7 +76,6 @@ module.exports = {
         const db = req.app.get('db')
         const { id } = req.params
         const { name, long, lat, image } = req.body
-        console.log(name, long, lat, image)
         db.edit_location([id, name, long, lat, image])
             .then(location =>
                 res.status(200).send(location))

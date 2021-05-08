@@ -11,7 +11,6 @@ class About extends Component {
 
 
     render() {
-        console.log(this.sessions)
         return (
             <div className="About">
 

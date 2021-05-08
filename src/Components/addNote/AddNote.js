@@ -17,7 +17,6 @@ class AddLocations extends Component {
 submit(){
   axios.post('/api/location/', this.state)
   .then(res=>{
-    console.log(res)
     this.props.history.push('/location')
   })
 }

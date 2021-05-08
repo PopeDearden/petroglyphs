@@ -37,7 +37,7 @@ axios.get('/api/locations')
       height: '50vh',
       
   };
-    console.log(this.state.locations)
+
     return (
       <div className="map-main">
         <div className="search-bar">

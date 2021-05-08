@@ -24,10 +24,8 @@ class Auth extends Component {
   }
   login = async () => {
     const res = await axios.post('/auth/login', this.state)
-    console.log(res.data)
     if (res.data.user) {
       this.props.updateUser(res.data.user)
-      console.log(res.data.user)
       this.props.check()
     }
 
@@ -42,7 +40,6 @@ class Auth extends Component {
   //       })
   //   }
   render() {
-    // console.log(this.state)
     return (
       <div className='Auth'>
         <div className='auth_container'>
