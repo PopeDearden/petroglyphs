@@ -29,6 +29,11 @@ class PanelBuilder extends Component {
 
     }
     componentDidMount() {
+        axios.get('/auth/check')
+        .then(res => {
+            console.log(res.data)
+            this.setState({auth: res.data.isAdmin})
+        })
         this.getSymbols()
         this.getPanelInfo()
         this.getPanelTable(this.props.match.params.id)
@@ -99,7 +104,7 @@ class PanelBuilder extends Component {
         })
         // console.log(row1)
         console.log(this.state.locationInfo)
-        if (this.props.username === 'taylordearden@gmail.com') {
+        if (this.state.auth) {
             return (
                 <div className="PanelBuilder">
                     <div className="right-side">

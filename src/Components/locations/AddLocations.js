@@ -11,8 +11,16 @@ class AddLocations extends Component {
       name:'',
       longitude: '',
       latitude: '',
-      image:''
+      image:'',
+      auth: false
     };
+  }
+  componentDidMount () {
+    axios.get('/auth/check')
+    .then(res => {
+        console.log(res.data)
+        this.setState({auth: res.data.isAdmin})
+    })
   }
 submit(){
   axios.post('/api/location/', this.state)
@@ -23,8 +31,7 @@ submit(){
 }
 
   render() {
-    console.log(this.props.username)
-    if(this.props.username === 'taylordearden@gmail.com'){
+    if(this.state.auth){
       return (
         <div className="add-symbol">
           <div className="search-bar">
@@ -52,7 +59,6 @@ submit(){
       );
     }
     else{
-      alert('access denied')
       return(
         <div className="Denied">
           Access Denied, Contact Taylor

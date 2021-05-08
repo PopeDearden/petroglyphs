@@ -39,6 +39,11 @@ class Location extends Component {
 
     }
     componentDidMount() {
+        axios.get('/auth/check')
+        .then(res => {
+            console.log(res.data)
+            this.setState({auth: res.data.isAdmin})
+        })
         this.getSymbols()
         this.getPanelInfo()
         this.getPanelTable(this.props.match.params.id)
@@ -102,7 +107,7 @@ class Location extends Component {
         this.props.history.push(`/editSymbol/${id}`)
     }
     async newNote(id) {
-        if(this.props.username === 'taylordearden@gmail.com'){
+        if(this.state.auth){
         await axios.post(`/api/notes/${id}`)
             .then(
                 this.setState({
@@ -120,7 +125,7 @@ class Location extends Component {
         }
     }
     async editNote() {
-        if(this.props.username === 'taylordearden@gmail.com'){
+        if(this.state.auth){
         await axios.put(`/api/notes/${this.state.noteId}`, this.state)
                 await this.getNotes(this.props.match.params.id)
                 await swal.fire('Note Updated')
@@ -130,7 +135,7 @@ class Location extends Component {
         }
     }
     async deleteNote() {
-        if(this.props.username === 'taylordearden@gmail.com'){
+        if(this.state.auth){
         await axios.delete(`/api/notes/${this.state.noteId}`)
             .then(
                 await this.setState({

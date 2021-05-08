@@ -24,6 +24,11 @@ class EditSymbol extends Component {
     }
     componentDidMount() {
         const { id } = this.props.match.params
+        axios.get('/auth/check')
+        .then(res => {
+            console.log(res.data)
+            this.setState({auth: res.data.isAdmin})
+        })
         axios.get(`/api/meaning/${id}`)
             .then(res => {
                 this.setState({
@@ -100,7 +105,7 @@ class EditSymbol extends Component {
 
 
     render() {
-        if (this.props.username === 'taylordearden@gmail.com') {
+        if (this.state.auth) {
             return (
 
                 <div className="edit-main">

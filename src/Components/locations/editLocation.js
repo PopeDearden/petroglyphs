@@ -18,6 +18,11 @@ class EditLocation extends Component {
 
     }
     componentDidMount() {
+        axios.get('/auth/check')
+        .then(res => {
+            console.log(res.data)
+            this.setState({auth: res.data.isAdmin})
+        })
         this.getPanelInfo()
 
     }
@@ -45,7 +50,7 @@ class EditLocation extends Component {
 
 
     render() {
-        if (this.props.username === 'taylordearden@gmail.com') {
+        if (this.state.auth) {
             return (
 
                 <div className="edit-main">
