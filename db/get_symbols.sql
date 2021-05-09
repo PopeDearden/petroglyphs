@@ -1,2 +1,2 @@
 select * from symbols
-order by symbol_name asc;
+order by type asc;
