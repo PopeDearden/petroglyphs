@@ -26,9 +26,7 @@ check(){
     this.setState({
       user: res.data
     })
-
   })
-  
 }
 render() {
 if(this.state.user === 'no'){

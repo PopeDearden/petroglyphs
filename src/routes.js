@@ -16,6 +16,7 @@ import Location from './Components/locations/Location'
 import EditLocation from './Components/locations/editLocation'
 import MapAttributeSearch from './Components/map/MapAttributeSearch'
 import Types from './Components/type/Types';
+import symbollist from './Components/pdfcreation/symbollist';
 
 
 
@@ -36,6 +37,7 @@ export default (
     <Route path='/attribute' component={MapAttributeSearch}/>
     <Route path='/about' component={About}/>
     <Route path='/types' component={Types}/>
+    <Route path='/pdf/symbollist' component={symbollist} />
 
   </Switch>
 )

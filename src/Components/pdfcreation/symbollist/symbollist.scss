@@ -1,0 +1,26 @@
+.PDF-symbol-list{
+    display: flex;
+    flex-wrap: wrap;
+    img{
+        width: 1in;
+        height: 1in;
+    }
+}
+.PDF-Symbol-Section {
+    min-height: 2.375in;
+    max-height: 2.375in;
+    min-width: 3.25in *2;
+    max-width: 3.25in *2;
+    display: flex;
+    justify-content: flex-start;
+}
+.PDF-Symbol-Meaning-List{
+    min-width: 2in*2;
+    max-width: 2in*2;
+    display: flex;
+    flex-direction: column;
+    margin-left: .25in;
+}
+@media print {
+.Side {display: none}
+}
